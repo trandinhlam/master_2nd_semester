@@ -13,7 +13,9 @@ Thang chấm điểm:
 
 ### **Yêu cầu 1**
 
-+ Phân tích case-study của nhóm Xác đinh tất cả các vấn đề mà case-study mô tả Giải pháp cho từng vấn đề là gì?
++ Phân tích case-study của nhóm Xác đinh tất cả các vấn đề mà case-study mô tả
+
++ Giải pháp cho từng vấn đề là gì?
 
 + Chú ý: các vấn đề càng nhỏ, càng cụ thể càng tốt vì nhóm phải hiện thực hóa cách giải quyết vấn đề khi có dữ liệu minh
   họa.
