@@ -63,7 +63,9 @@ ____
 ____
 
 # II. Phân tích nghiệp vụ:
-
++ Link vẽ mô hình trong phân tích nghiệp vụ: 
+  + https://drive.google.com/file/d/1loTjNS5HTa3zzTyr_Leg520H-Yr2XpaR/view?usp=sharing
+    ![img.png](images/tonghopnghiepvu.png)
 ### II.1: _Nghiệp vụ Tính toán, Phân tích các chỉ số cơ bản của một cổ phiếu/ nhóm cổ phiếu:_
 
 Trong nghiệp vụ phân tích chứng khoán, các chỉ số cơ bản của một cổ phiếu hay một loại cổ phiếu là các thông tin đầu
