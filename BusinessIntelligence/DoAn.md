@@ -58,7 +58,7 @@ ____
 + https://www.stockbiz.vn/InsiderActionsStats.aspx
 + https://finance.vietstock.vn/
 + http://s.cafef.vn/screener.aspx
-
++ https://www.hsx.vn/Modules/Rsde/Report/Index?fid=a78ae7acb08d49ecae4b628c9ba98d26
 ____
 ____
 
@@ -72,7 +72,7 @@ Trong nghiệp vụ phân tích chứng khoán, các chỉ số cơ bản của 
 tiên cần phải nắm bắt. Trong phương pháp phân tích cơ bản, các nhóm chỉ số sau đây thường được các phân tích viên sử
 dụng nhiều nhất:
 
-+ Nhóm hệ số giá trị: Chỉ số EPS (Earning per Stock)
++ Nhóm hệ số giá trị: Chỉ số EPS (Earning per Share)
     + EPS – Thu nhập trên một Cổ phiếu: là chỉ số cho biết khả năng sinh lợi của Công ty trên một đơn vị cổ phần <br/>
         + EPS = (∑ thu nhập sau thuế - ∑ số cổ tức của Cổ phiếu ưu đãi)/ ∑ số Cổ phiếu đang lưu hành <br/>
         + › Nếu chỉ số EPS càng cao thì nó càng cho thấy khả năng sinh lời của Công ty càng lớn và ngược lại.
