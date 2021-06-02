@@ -20,6 +20,21 @@ Cấu trúc của một đồ án nên bao gồm những nội dung sau:
   động…%, cải thiện sản xuất… Chi tiết sẽ được làm rõ ở phần phân tích khả thi kinh tế)
 + Ràng buộc hoặc rũi ro (vd: thời gian, nhân lực, người dùng, kinh phí, môi trường triển khai…)
 
+Chi tiết:
++ Lĩnh vực kinh doanh: thiết bị điện tử
++ Phòng ban thực hiện nghiệp vụ: bộ phận chăm sóc khách hàng
++ Phạm vi hệ thống: toàn khu vực miền Nam
++ Bối cảnh nghiệp vụ: Hiện tại đang quản lí thông tin khách hàng bằng thẻ vật lí, khách hàng đi đến các cửa hàng của chuỗi phải mang theo thẻ để được nhận ưu đãi, tích điểm, khuyến mãi và chính sách giao hàng. Điều này gây ra phiền toái cho khách hàng (khó tổng hợp thông tin)
++ Mục tiêu của dự án:
+  - Ngắn hạn: Giải quyết các bất cập khi sử dụng thẻ vật lí, giảm thời gian chờ đợi, thủ tục
+  - Dài hạn: Tạo tiền đề để mở rộng quy mô chuỗi, tăng doanh số khách hàng nhờ vào quản lí khách hàng đồng bộ.
++ Giá trị: Tiết kiệm chi phí làm thẻ, tiết kiệm thời gian cho khách hàng, không cần thực hiện quản lí thẻ, dễ dàng thu thập thông tin khách hàng, dễ dàng triển khai các chương trình khuyến mãi, marketing.
++ Ràng buộc về rủi ro:
+  - Chi phí và con người (kinh phí hạn chế)
+  - Cấp lãnh đạo không duyệt
+  - Chính sách quyền riêng tư và thu thập dữ liệu của khách hàng
+  - Vấn đề về trải nghiệm khách hàng.
++ 
 ## II. Phân tích
 
 ### 1. Phân tích hiện trạng
