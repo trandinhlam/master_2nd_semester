@@ -13,7 +13,8 @@ Cấu trúc của một đồ án nên bao gồm những nội dung sau:
 
 ## I. Tổng quan về dự án phát triển hệ thống
 
-+ Giới thiệu chung về dự án (mô tả bối cảnh, công ty/đơn vị, lãnh vực hoạt động, phạm vi, tổ chức đơn vị, …)
++ _Giới thiệu chung về dự án (mô tả bối cảnh, công ty/đơn vị, lãnh vực hoạt động, phạm vi, tổ chức đơn vị, …)_
+  
 + Mục tiêu: liệt kê và diễn giải các mục tiêu của gự án (vd: theo chỉ đạo của …, nâng cao hiệu suất, mở rộng hoạt động
   sản xuất kinh doanh, …)
 + Giá trị: liệt kê các giá trị ước lương sẽ mang lại (ở mức tổng quát, vd: gia tăng bán hàng …%, giảm chi phí hoạt
