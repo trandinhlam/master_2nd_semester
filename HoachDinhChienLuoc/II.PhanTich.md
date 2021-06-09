@@ -37,6 +37,9 @@ ___
 
 **Sơ đồ ngữ cảnh toàn bộ nghiệp vụ**
 
+**Tham khảo**
+![img.png](img/thamkhaosodongucanh.png)
+
 **Sơ đồ use case toàn bộ nghiệp vụ**
 
 **Nhận xét**
