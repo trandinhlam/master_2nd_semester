@@ -34,11 +34,13 @@ ___
     + Quản lý khách hàng
     + Quản lý nhà cung cấp điện thoại
     + Quản lý doanh thu và công nợ (trả nợ, nhận bảo hành, trả bảo hành)
+    + Kế toán
 
 **Sơ đồ ngữ cảnh toàn bộ nghiệp vụ**
 
 **Tham khảo**
-![img.png](img/thamkhaosodongucanh.png)
+**Vẽ lại sơ đồ ngữ cảnh mức 0**
+![img.png](img/SoDoNguCanh.png)
 
 **Sơ đồ use case toàn bộ nghiệp vụ**
 
