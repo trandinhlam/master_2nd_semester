@@ -16,18 +16,38 @@
 
 _______
 
-# BASIC
+# Phần 1: Tổng quan
 
-## Seach concepts in IR system
+## Giới thiệu Lucene
+
+## Chức năng
+
+## Đặc điểm
 
 _______
 
-# LUCENE APIs & concepts
+# Phần 2: Mô hình
 
-## Key features of Lucene
+## Mô hình trừu tượng, concept
 
-## Basic Terminology
+## Mô hình cài đặt vật lý bằng Java
 
-## Lucene Index Structure
+_______
+
+# Phần 3: Đối sánh
+
+## Đối sánh với mô hình chuẩn
+
+## Đối sánh với một mô hình tương đương
+
+_______
+
+# Phần 4: Demo Lucene
+
+## Demo cơ bản
+
+## Demo nâng cao
+
+_______
 
 

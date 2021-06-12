@@ -1,6 +1,6 @@
 # III. Thiết kế hệ thống (phần này không bắt buộc nhưng có thể làm nếu được)
 
-+ Thiết chức năng
++ Thiết kế chức năng
 + Thiết kế CSDL
 + Thiết kế giao diện
 + Thiết kế kiến trúc (mô hình cơ sở hạ tầng kiến trúc và các cấu hình phần cứng/thiết bị để cài đặt và triển khai hệ
