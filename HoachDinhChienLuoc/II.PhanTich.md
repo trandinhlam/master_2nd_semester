@@ -111,39 +111,45 @@ ___
 ## 2. Đánh giá khả thi (các bạn tham khảo thêm tài liệu môn học, làm tối đa có thể)
 
 + Khả thi kinh tế (làm rõ chi phí – lợi ích, chú ý: lợi ích là làm rõ giá trị được liệt kê ở mục 1.3)
-  1. Xác định chi phí - lợi nhuận:
+    1. Xác định chi phí - lợi nhuận:
+
     - Chi phí của dự án bao gồm:
-      - Chí phí ban đầu:
-        + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 2 người backend, 2 người frontend, chi phí cho lương mỗi người khoảng 20 triệu đồng/tháng)
-        + Chí phí đầu tư hệ thống (máy chủ server)
-        + Chi phí đào tạo nhân viên sử dụng hệ thống
-      - Chi phí định kì:
-        + Chi phí duy trì và bảo trì hệ thống
+        - Chí phí ban đầu:
+            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 2 người backend, 2 người frontend, chi phí cho
+              lương mỗi người khoảng 20 triệu đồng/tháng)
+            + Chí phí đầu tư hệ thống (máy chủ server)
+            + Chi phí đào tạo nhân viên sử dụng hệ thống
+        - Chi phí định kì:
+            + Chi phí duy trì và bảo trì hệ thống
     - Lợi ích (lợi nhuận mang lại):
-      - Lợi nhuận hữu hình:
-        + Giảm chi phí, thời gian in ấn, chờ đợi làm thẻ khách hàng khi đổi thẻ, mất thẻ, (mỗi thẻ 100 nghìn đồng x số lượng khách hàng thân thiết - 10000 khách hàng thân thiết)
-      - Lợi nhuận vô hình:
-        + Giảm công sức bảo quản và kiểm tra thẻ
-        + Minh bạch thông tin khách hàng (giảm rủi ro khách hàng khiếu nại về quyền lợi khi sử dụng thẻ)
-        + Gia tăng tiện lợi cho khách hàng (không cần mang thẻ khi thanh toán, tự động áp dụng các thay đổi chính sách khách hàng)
-  2. Tính toán dòng tiền và xác định lợi ích:
-  Chi phí ban đầu :
+        - Lợi nhuận hữu hình:
+            + Giảm chi phí, thời gian in ấn, chờ đợi làm thẻ khách hàng khi đổi thẻ, mất thẻ, (mỗi thẻ 100 nghìn đồng x
+              số lượng khách hàng thân thiết - 10000 khách hàng thân thiết)
+        - Lợi nhuận vô hình:
+            + Giảm công sức bảo quản và kiểm tra thẻ
+            + Minh bạch thông tin khách hàng (giảm rủi ro khách hàng khiếu nại về quyền lợi khi sử dụng thẻ)
+            + Gia tăng tiện lợi cho khách hàng (không cần mang thẻ khi thanh toán, tự động áp dụng các thay đổi chính
+              sách khách hàng)
+
+    2. Tính toán dòng tiền và xác định lợi ích:
+       Chi phí ban đầu :
+
     - Chí phí phát triển hệ thống thông tin: 4 x 10.000.000 = 40.000.000 VND
     - Chi phí mua sắm phần cứng (máy chủ, màn hình, thiết bị mạng,...): 33.000.000 VND
-      + Máy chủ server: 20.000.000 VND
-      + Thiết bị mạng: 7.000.000 VND
-      + Các thiết bị ngoại vi hỗ trợ người sử dụng: 6.000.000 VND
-  Chi phí định kì:
-    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 
-    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 5.000.000 VND - 3 tháng
-  Lợi nhuận mang lại:
+        + Máy chủ server: 20.000.000 VND
+        + Thiết bị mạng: 7.000.000 VND
+        + Các thiết bị ngoại vi hỗ trợ người sử dụng: 6.000.000 VND Chi phí định kì:
+    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống):
+    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 5.000.000 VND - 3
+      tháng Lợi nhuận mang lại:
     - Đối với mỗi khách hàng có thẻ: không cần tốn 100.000 VND cho mỗi thẻ khách hàng.
     - Lượng khách hàng hiện tại là khách hàng thân thiết: 1000 khách hàng
     - Ước lượng số lượng khách hàng thân thiết tăng mỗi tháng: 10 khách hàng đăng kí mỗi tháng
 
 + Khả thi kỹ thuật
+
   |STT| Rủi ro | Đánh giá | Mô tả đánh giá | Mô tả khắc phục |
-  |---|--------|----------|----------------|-----------------|
+      |---|--------|----------|----------------|-----------------|
   |1|Sự quen thuộc của người dùng đối với các hệ thống tương tự | Trung bình | Nhân viên đã sử dụng máy tính tốt nhưng chưa có kinh nghiệm vận hành các hệ thống lớn | Training sử dụng hệ thống |
   |2|Sự quen thuộc với tiến trình phát triển hệ thống | Thấp | Nhân viên đã sử dụng quen thuộc các hệ thống khác được sử dụng trong công ty | |
   |3|Thay đổi tổ chức, cơ cấu | Thấp | Không ảnh hưởng nhiều đến hệ thống hiện tại| |
@@ -151,16 +157,20 @@ ___
   |5|Sự quen thuộc của nhóm phát triển đối với lĩnh vực đề xuất | Thấp | Nhóm đã phát triển và bảo trì một hệ thống tương tự trước đây | |
   |6|Kích thước hệ thống | Thấp | Hệ thống chỉ phá triển cho các của hàng tại khu vực miền Nam, thời gian phát triển và triển khai ít hơn 4 tháng với 4 thành viên tham gia phát triển | |
 + Hoạt động
-  - Mức gắn kết đối với nhu cầu nghiệp vụ và chiến lược công ty: nghiệp vụ nhằm mang lại trải nghiệm mua sắm tốt hơn cho khách hàng, giảm chi chí phát sinh và rắc rối liên quan đến thẻ khách hàng vật lí.
+    - Mức gắn kết đối với nhu cầu nghiệp vụ và chiến lược công ty: nghiệp vụ nhằm mang lại trải nghiệm mua sắm tốt hơn
+      cho khách hàng, giảm chi chí phát sinh và rắc rối liên quan đến thẻ khách hàng vật lí.
 
-  - Tác động với tổ chức:
-    + Các nghiệp vụ cũ bị loại bỏ: cấp thẻ, làm thẻ cho khách hàng
-    + Tự động hoá các nghiệp vụ: Quản lí khách hàng, thanh toán sử dụng các lợi ích cuả khách hàng thân thiết.
-  - Khả thi về lịch thực hiện: Khung thời gian thực hiện trong thời gian cho phép (3 tháng) để nhanh chóng thay thế các nghiệp vụ hiện tại, cung cấp trải nghiệp mới cho khách hàng và đồng thời lấy được lợi thế kinh doanh so với đối thủ.
+    - Tác động với tổ chức:
+        + Các nghiệp vụ cũ bị loại bỏ: cấp thẻ, làm thẻ cho khách hàng
+        + Tự động hoá các nghiệp vụ: Quản lí khách hàng, thanh toán sử dụng các lợi ích cuả khách hàng thân thiết.
+    - Khả thi về lịch thực hiện: Khung thời gian thực hiện trong thời gian cho phép (3 tháng) để nhanh chóng thay thế
+      các nghiệp vụ hiện tại, cung cấp trải nghiệp mới cho khách hàng và đồng thời lấy được lợi thế kinh doanh so với
+      đối thủ.
 + Luật và hợp đồng
-  - Bản quyền: Phần mềm sử dụng các công cụ mã nguồn mở đế phát triển
-  - Luật lao động và luật chống độc quyền: Không ảnh hưởng đến hệ thống
-  - Luật an toàn và bảo mật thông tin: bảo vệ thông tin khách hàng (thông tin cá nhân, thông tin mua hàng)
+    - Bản quyền: Phần mềm sử dụng các công cụ mã nguồn mở đế phát triển
+    - Luật lao động và luật chống độc quyền: Không ảnh hưởng đến hệ thống
+    - Luật an toàn và bảo mật thông tin: bảo vệ thông tin khách hàng (thông tin cá nhân, thông tin mua hàng)
+
 ___ 
 
 ## 3. Kế hoạch thực hiện
