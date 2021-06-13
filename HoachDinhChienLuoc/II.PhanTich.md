@@ -39,21 +39,72 @@ ___
 **Sơ đồ ngữ cảnh toàn bộ nghiệp vụ**
 
 **Tham khảo**
-**Vẽ lại sơ đồ ngữ cảnh mức 0**
+![img.png](img/thamkhaosodongucanh.png)
+**Vẽ lại sơ đồ DFD mức 0**
 ![img.png](img/SoDoNguCanh.png)
 
-**Sơ đồ use case toàn bộ nghiệp vụ**
+**Vẽ lại sơ đồ use case tổng quan của toàn hệ thống**
 
 **Nhận xét**
+
++ Các nghiệp vụ hiện tại của doanh nghiệp chưa tập trung nhiều vào quản lý thông tin khách hàng, cũng như các quy trình
+  xoay quanh quyền lợi, trải nghiệm của khách hàng. Vì vậy dự án này tập trung hướng đến cải tiến các quy trình phục vụ
+  quyền lợi và trải nghiệm của đối tượng khách hàng.
 
 #### 2. Giới hạn phạm vi nghiệp vụ mà dự án tập trung cải tiến
 
 Phạm vi nghiệp vụ chủ yếu của dự án HTTT này là tập trung cải tiến quy trình quản lý tài khoản khách hàng, cụ thể là:
 
++ Quy trình mua hàng của khách hàng
 + Thông tin liên hệ của khách hàng
 + Lịch sử mua hàng của khách hàng
 + Lịch sử đổi trả, bảo hành sản phẩm của khách hàng
 + Quản lý các khuyến mãi, ưu đãi dành cho khách hàng dựa theo cấp độ
+
+#### 3. Phân tích Qui trình nghiệp vụ
+
+**Sơ đồ use case nghiệp vụ chăm sóc khách hàng**
+![](./img/HoachdinhChienLuocSoDo-UsecaseNghiepVuKhachHang.png)
+
+Các thừa tác viên tham gia vào quy trình nghiệp vụ này bao gồm:
+
++ Nhân viên bán hàng
++ Nhân viên chăm sóc khách hàng
++ Nhân viên kỹ thuật
+
+  ![img.png](img/thuatacvien.png)
+
+Các thực thể nghiệp vụ tham gia vào các nghiệp vụ này bao gồm:
+
++ Hồ sơ tài khoản khách hàng
++ Hóa đơn bán hàng
++ Sản phẩm
++ Phiếu đổi trả
++ Phiếu bảo hành
++ Phiếu ưu đãi/khuyến mãi
+
+![img.png](img/thucthenghiepvu.png)
+
+**Sơ đồ Business object Diagram cho các use case được chọn**
+
++ use case mua hàng:
+
+![img.png](img/thuthe_usecase_muahang.png)
+
++ use case xem thông tin cá nhân:
+
+![img.png](img/thuthe_usecase_xemtaikhoan.png)
+
++ use case nhận khuyến mãi:
+
+![img.png](img/thuthe_usecase_nhankhuyenmai.png)
+
++ use case gửi yêu cầu hậu mãi:
+
+![img.png](img/thucthe_usecase_haumau.png)
+
+**Sơ đồ Activity Diagram cho các use case được chọn**
+
 
 ___ 
 
