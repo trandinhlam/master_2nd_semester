@@ -56,6 +56,7 @@ ____
     Ngoài các chức năng chính về kĩ thuật như trên, Lucene còn có các đặc điểm khiến nó trở thành một công cụ full-text search mạnh mẽ như:
     - Nó là phần mềm mã nguồn mở theo giấp phép Apache, giúp nó không những là công cụ mà còn có thể nghiên cứu và pháp triển các kĩ thuật full-text search khách dựa trên nó.
     - Vì được xây dựng trên lí thuyết hướng đối tượng nên nó có khả năng mở rộng to lớn. Các lập trình viên có thể dễ dàng sử thay đổi các component trong Lucene để cung cấp khả năng xử lí trên HTML, XML cùng các định dạng PDF khác trên nhiều ngôn ngữ như Tiếng Trung, Tiếng Hàn, Tiếng Pháp,...
+    - Đa nền tảng, cộng với sự trợ giúp của Apache Software Foundation, các lập trình viên dễ dàng giao tiếp với nhà pháp triển của Lucene, chia sẻ tài nguyên và giải quyết các khó khăn trong quá trình phát triển phần mềm
 
 ### Search và Index
 
