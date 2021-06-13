@@ -129,17 +129,32 @@ ___
   2. Tính toán dòng tiền và xác định lợi ích:
   Chi phí ban đầu :
     - Chí phí phát triển hệ thống thông tin: 4 x 10.000.000 = 40.000.000 VND
-    - Chi phí mua sắm phần cứng (máy chủ, màn hình, thiết bị mạng,...): 33.000.000 VND
-      + Máy chủ server: 20.000.000 VND
+    - Chi phí mua sắm phần cứng (máy chủ, màn hình, thiết bị mạng,...): 21.000.000 VND
+      + Máy chủ server: 15.000.000 VND
       + Thiết bị mạng: 7.000.000 VND
-      + Các thiết bị ngoại vi hỗ trợ người sử dụng: 6.000.000 VND
+      + Các thiết bị ngoại vi hỗ trợ người sử dụng: 4.000.000 VND
   Chi phí định kì:
-    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 
-    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 5.000.000 VND - 3 tháng
+    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 3.000.000 - 12 tháng
+    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 3.000.000 VND - 12 tháng
   Lợi nhuận mang lại:
     - Đối với mỗi khách hàng có thẻ: không cần tốn 100.000 VND cho mỗi thẻ khách hàng.
     - Lượng khách hàng hiện tại là khách hàng thân thiết: 1000 khách hàng
     - Ước lượng số lượng khách hàng thân thiết tăng mỗi tháng: 10 khách hàng đăng kí mỗi tháng
+  Ước lượng lợi nhuận:
+    Đơn vị: triệu VND
+
+    |Năm|Năm 0|Năm 1|Năm 2| Năm 3|Năm 4|Năm 5|
+    |---|-----|-----|-----|------|-----|-----|
+    |Lợi nhuận| 0.0| 12| 12| 12| 12| 12|
+    |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
+    |PV lợi nhuận| 0.0| 11.16| 10.44| 9.72| 9.12| 8.52|
+    |NPV lợi nhuận luỹ kế | 0.0| 11.16| 21.6| 31.32| 40.44| 48.96|
+    |Chi phí ban đầu | 61| | | | | |
+    |Chi phí định kì | 0.0| 6| 6| 6| 6| 6|
+    |Tỉ lệ giảm 7%| 0.0| 0.91| 0.87| 0.81| 0.76| 0.71|
+    |PV chi phí định kỳ| 0.0| 5.46| 5.22| 4.86| 4.56| 4.26|
+    |NPV chí phí luỹ kế| 61| 66.46| 71.68| 76.54| 81.1| 85.36|
+
 
 + Khả thi kỹ thuật
   |STT| Rủi ro | Đánh giá | Mô tả đánh giá | Mô tả khắc phục |
