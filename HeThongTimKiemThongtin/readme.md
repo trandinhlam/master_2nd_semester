@@ -47,6 +47,15 @@ _______
 ____
 
 ## Chức năng
+    - Định dạng index của Lucene cung cấp độc lập với ứng dụng. Nó định nghĩa tập hợp các tập tin chỉ mục dựa trên octet  mà cho phép các hệ thống hoặc ứng dụng chạy trên các nền tảng khác nhau chia sẻ các tập tin chỉ mục này.
+    - Dựa trên inverted index của các công cụ full-text search truyền thống, các khối chỉ mục được cài đặt và thiết lập các file index nhỏ cho một file mới giúp cải thiện tốc độ đánh index. Sau đó kết hợp với chỉ mục gốc để tối ưu hoá chỉ mục.
+    - Xây dựng dựa trên kiến trúc hướng đối tượng, giúp cho việc ứng dụng Lucene dễ dàng và hỗ trợ thuận lợi cho việc mở rộng và cài đặt các tính năng mới.
+    - Bộ phân tích văn bản được cài đặt độc lập với ngôn ngữ cài đặt và định dạng tập tin. Phía lập chỉ mục tạo ra tập tin chỉ mục bằng cách chấp nhận một Token Stream. Ngươì sử dụng có thể sử dụng ngôn ngữ và định dạng file mới mà chỉ cần cài đặt interface cho bộ phân tích văn bản.
+    - Công cụ query mạnh mẽ được cài đặt sẵn trong Lucene. Người dùng không cần phải tự cài đặt công cụ của riêng họ. Kể cả khi hệ thống có được khả năng query mạnh thì Lucene vẫn có khả năng query theo các Boolean operation, fuzzy search, group query,...
+
+    Ngoài các chức năng chính về kĩ thuật như trên, Lucene còn có các đặc điểm khiến nó trở thành một công cụ full-text search mạnh mẽ như:
+    - Nó là phần mềm mã nguồn mở theo giấp phép Apache, giúp nó không những là công cụ mà còn có thể nghiên cứu và pháp triển các kĩ thuật full-text search khách dựa trên nó.
+    - Vì được xây dựng trên lí thuyết hướng đối tượng nên nó có khả năng mở rộng to lớn. Các lập trình viên có thể dễ dàng sử thay đổi các component trong Lucene để cung cấp khả năng xử lí trên HTML, XML cùng các định dạng PDF khác trên nhiều ngôn ngữ như Tiếng Trung, Tiếng Hàn, Tiếng Pháp,...
 
 ### Search và Index
 
