@@ -10,8 +10,9 @@ ___
     + Mô tả bằng văn bản, mô hình hóa qui trình (dùng activity diagram, business object diagram)
     + Nêu và phân tích các vấn đề tồn tại (vd: không đồng bộ, xử lý cầu kỳ, chi phí cao, thời gian dài, …)
     + Phân tích cải tiến (có thể liên hệ các phương pháp phân tích BPA, BPI, BPR để đưa ra giải pháp cho vấn đề nêu
-      trên). Vẽ lại qui trình (activity diagram) nếu qui trình nghiệp vụ thay đổi. Hiện trạng CNT T: nêu tình trạng về
-      mạng, phần cứng,
+      trên).
+    + Vẽ lại qui trình (activity diagram) nếu qui trình nghiệp vụ thay đổi.
+    + Hiện trạng CNTT: nêu tình trạng về mạng, phần cứng,
 + phần mềm và phân tích khả năng đáp ứng.
 
 ___
@@ -39,7 +40,7 @@ ___
 **Sơ đồ ngữ cảnh toàn bộ nghiệp vụ**
 
 **Tham khảo**
-![img.png](img/thamkhaosodongucanh.png)
+
 **Vẽ lại sơ đồ DFD mức 0**
 ![img.png](img/SoDoNguCanh.png)
 
@@ -105,6 +106,53 @@ Các thực thể nghiệp vụ tham gia vào các nghiệp vụ này bao gồm:
 
 **Sơ đồ Activity Diagram cho các use case được chọn**
 
++ use case mua hàng:
+  ![](img/HoachdinhChienLuocSoDo-ActivityDiagramHienTai_muahang.png)
+
++ use case xem thông tin cá nhân:
+  ![img.png](img/activity_xemthongtincanhan.png)
+
++ use case gửi yêu cầu hậu mãi:
+  ![img.png](img/activity_guiyeucauhaumai.png)
++ use case nhận khuyến mãi: (chưa vẽ chi tiết được)
+  ![img.png](img/activity_nhankhuyenmai.png)
+
+#### 4. Chỉ ra vấn đề:
+
+_Phác thảo sơ lược các vấn đề_
+
++ use case mua hàng:
+    + cửa hàng không quản lý thông tin tài khoản của khách hàng, mà chỉ sử dụng số điện thoại của khách hàng để làm tham
+      chiếu cho các nghiệp vụ hậu mãi phát sinh sau này.
+    + sau khi thanh toán hóa đơn, nhân viên phải ghi phiếu bảo hành và gửi lại cho khách hàng kèm hóa đơn và sản phẩm.
+      => điều này buộc khách hàng giữ lại phiếu bảo hành kèm hóa đơn trong suốt thời hạn bảo hành (thường 6-12 tháng).
+    +
+
++ use case xem thông tin cá nhân:
+    + Thông tin hiển thị quá ngắn gọn, chỉ hiển thị tổng quan
+    + Chưa thu thập được một số thông tin cơ bản của khách hàng như họ tên, ngày sinh,..
+    + Chưa liệt kê được lịch sử mua hàng, bảo hành, đổi trả
+
+
++ use case gửi yêu cầu hậu mãi:
+    + Lượng thủ tục từ khách hàng ở bước đầu tiên khá lớn, nhiều khả năng khách hàng không cung cấp đủ giấy tờ thủ tục
+    + Thời gian hẹn trả sản phẩm khi bảo hành thường cố định (1-2 tuần), trong khi thời gian thực sửa chữa thường ngắn
+      hơn. Hệ thống chưa có thông báo tình trạng sửa chữa cho khách hàng
+    + Chưa tách bạch được loại dịch vụ hậu mãi (bảo hành sửa chữa/đổi hàng/trả hàng hoàn tiền) mà vẫn cùng chung quy
+      trình.
+
++ use case nhận khuyến mãi, ưu đãi:
+    +
+
+#### 5. Đưa ra giải pháp bằng các phương pháp phân tích cải tiến BPA, BPI, BPR :
+
++ use case mua hàng:
+
++ use case xem thông tin cá nhân:
+
++ use case gửi yêu cầu hậu mãi:
+
++ use case xem thông tin cá nhân:
 
 ___ 
 
@@ -136,36 +184,35 @@ ___
 
     - Chí phí phát triển hệ thống thông tin: 4 x 10.000.000 = 40.000.000 VND
     - Chi phí mua sắm phần cứng (máy chủ, màn hình, thiết bị mạng,...): 21.000.000 VND
-      + Máy chủ server: 15.000.000 VND
-      + Thiết bị mạng: 7.000.000 VND
-      + Các thiết bị ngoại vi hỗ trợ người sử dụng: 4.000.000 VND
-  Chi phí định kì:
-    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 3.000.000 - 12 tháng
-    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 3.000.000 VND - 12 tháng
-  Lợi nhuận mang lại:
+        + Máy chủ server: 15.000.000 VND
+        + Thiết bị mạng: 7.000.000 VND
+        + Các thiết bị ngoại vi hỗ trợ người sử dụng: 4.000.000 VND Chi phí định kì:
+    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống):
+      3.000.000 - 12 tháng
+    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 3.000.000 VND - 12
+      tháng Lợi nhuận mang lại:
     - Đối với mỗi khách hàng có thẻ: không cần tốn 100.000 VND cho mỗi thẻ khách hàng.
     - Lượng khách hàng hiện tại là khách hàng thân thiết: 1000 khách hàng
-    - Ước lượng số lượng khách hàng thân thiết tăng mỗi tháng: 10 khách hàng đăng kí mỗi tháng
-  Ước lượng lợi nhuận:
-    Đơn vị: triệu VND
+    - Ước lượng số lượng khách hàng thân thiết tăng mỗi tháng: 10 khách hàng đăng kí mỗi tháng Ước lượng lợi nhuận:
+      Đơn vị: triệu VND
 
-    |Năm|Năm 0|Năm 1|Năm 2| Năm 3|Năm 4|Năm 5|
-    |---|-----|-----|-----|------|-----|-----|
-    |Lợi nhuận| 0.0| 12| 12| 12| 12| 12|
-    |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
-    |PV lợi nhuận| 0.0| 11.16| 10.44| 9.72| 9.12| 8.52|
-    |NPV lợi nhuận luỹ kế | 0.0| 11.16| 21.6| 31.32| 40.44| 48.96|
-    |Chi phí ban đầu | 61| | | | | |
-    |Chi phí định kì | 0.0| 6| 6| 6| 6| 6|
-    |Tỉ lệ giảm 7%| 0.0| 0.91| 0.87| 0.81| 0.76| 0.71|
-    |PV chi phí định kỳ| 0.0| 5.46| 5.22| 4.86| 4.56| 4.26|
-    |NPV chí phí luỹ kế| 61| 66.46| 71.68| 76.54| 81.1| 85.36|
+  |Năm|Năm 0|Năm 1|Năm 2| Năm 3|Năm 4|Năm 5|
+                                                            |---|-----|-----|-----|------|-----|-----|
+  |Lợi nhuận| 0.0| 12| 12| 12| 12| 12|
+  |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
+  |PV lợi nhuận| 0.0| 11.16| 10.44| 9.72| 9.12| 8.52|
+  |NPV lợi nhuận luỹ kế | 0.0| 11.16| 21.6| 31.32| 40.44| 48.96|
+  |Chi phí ban đầu | 61| | | | | |
+  |Chi phí định kì | 0.0| 6| 6| 6| 6| 6|
+  |Tỉ lệ giảm 7%| 0.0| 0.91| 0.87| 0.81| 0.76| 0.71|
+  |PV chi phí định kỳ| 0.0| 5.46| 5.22| 4.86| 4.56| 4.26|
+  |NPV chí phí luỹ kế| 61| 66.46| 71.68| 76.54| 81.1| 85.36|
 
 
 + Khả thi kỹ thuật
 
   |STT| Rủi ro | Đánh giá | Mô tả đánh giá | Mô tả khắc phục |
-      |---|--------|----------|----------------|-----------------|
+                                                                                                                                        |---|--------|----------|----------------|-----------------|
   |1|Sự quen thuộc của người dùng đối với các hệ thống tương tự | Trung bình | Nhân viên đã sử dụng máy tính tốt nhưng chưa có kinh nghiệm vận hành các hệ thống lớn | Training sử dụng hệ thống |
   |2|Sự quen thuộc với tiến trình phát triển hệ thống | Thấp | Nhân viên đã sử dụng quen thuộc các hệ thống khác được sử dụng trong công ty | |
   |3|Thay đổi tổ chức, cơ cấu | Thấp | Không ảnh hưởng nhiều đến hệ thống hiện tại| |
