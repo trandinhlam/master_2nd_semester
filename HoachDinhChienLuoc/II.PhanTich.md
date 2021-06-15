@@ -163,8 +163,8 @@ ___
 
     - Chi phí của dự án bao gồm:
         - Chí phí ban đầu:
-            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 2 người backend, 2 người frontend, chi phí cho
-              lương mỗi người khoảng 20 triệu đồng/tháng)
+            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 1 phân tích viên, 1 thiết kế hệ thống, 1 người
+              backend, 1 người frontend, chi phí cho lương mỗi người khoảng 20 triệu đồng/tháng)
             + Chí phí đầu tư hệ thống (máy chủ server)
             + Chi phí đào tạo nhân viên sử dụng hệ thống
         - Chi phí định kì:
@@ -197,7 +197,7 @@ ___
       Đơn vị: triệu VND
 
   |Năm|Năm 0|Năm 1|Năm 2| Năm 3|Năm 4|Năm 5|
-                                                            |---|-----|-----|-----|------|-----|-----|
+                                                                                                |---|-----|-----|-----|------|-----|-----|
   |Lợi nhuận| 0.0| 12| 12| 12| 12| 12|
   |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
   |PV lợi nhuận| 0.0| 11.16| 10.44| 9.72| 9.12| 8.52|
@@ -212,7 +212,7 @@ ___
 + Khả thi kỹ thuật
 
   |STT| Rủi ro | Đánh giá | Mô tả đánh giá | Mô tả khắc phục |
-                                                                                                                                        |---|--------|----------|----------------|-----------------|
+                                                                                                                                                                            |---|--------|----------|----------------|-----------------|
   |1|Sự quen thuộc của người dùng đối với các hệ thống tương tự | Trung bình | Nhân viên đã sử dụng máy tính tốt nhưng chưa có kinh nghiệm vận hành các hệ thống lớn | Training sử dụng hệ thống |
   |2|Sự quen thuộc với tiến trình phát triển hệ thống | Thấp | Nhân viên đã sử dụng quen thuộc các hệ thống khác được sử dụng trong công ty | |
   |3|Thay đổi tổ chức, cơ cấu | Thấp | Không ảnh hưởng nhiều đến hệ thống hiện tại| |
@@ -238,6 +238,27 @@ ___
 
 ## 3. Kế hoạch thực hiện
 
+### 3.1 Xác định các nguồn lực và nhiệm vụ
+
++ Nhân lực:
+    + 1 phân tích viên, thiết kế viên hệ thống
+    + 1 kỹ sư backend
+    + 1 kỹ sư Web front-end
+    + 1 Web designer
+
++ Các nhiệm vụ chính:
+    + Thu thập yêu cầu hệ thống
+    + Phân tích hệ thống
+    + Thiết kế kiến trúc hệ thống
+    + Thiết kế dữ liệu
+    + Thiết kế giao diện
+    + Cài đặt lập trình Backend
+    + Cài đặt lập trình Frontend
+    + Kiểm thử
+    + Biên soạn tài liệu
+
+### 3.2 Phác thảo Thứ tự thực hiện các công việc bằng sơ đồ Gantt
+![img.png](img/KeHoachThucHien.png)
 ___ 
 
 ## 4. Mô hình hóa phân tích hệ thống
