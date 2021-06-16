@@ -24,7 +24,7 @@ ___
 + Hiện nay mảng kinh doanh bán lẻ các thiết bị điện thoại di động ngày càng nở rộ để đáp ứng nhu cầu của người dùng. Khi
   công việc kinh doanh này tăng trưởng, các cửa hàng vừa và nhỏ sẽ gặp phải những khó khăn nhất định trong quá trình duy
   trì bộ máy quản lý hiện tại, cũng như tính toán chiến lược mở rộng quy mô bán hàng. Hiện nay với sự cạnh tranh gắt gao
-  từ các chuỗi bán lẻ lớn nư Thegioididong, FPT, Viettel,... thì thị phần cho các cửa hàng vừa và nhỏ chỉ còn vài phần
+  từ các chuỗi bán lẻ lớn như Thegioididong, FPT, Viettel,... thì thị phần cho các cửa hàng vừa và nhỏ chỉ còn vài phần
   trăm. Vì thế yêu cầu cải tiến hệ thống để gia tăng chất lượng dịch vụ bán hàng là yêu cầu cấp thiết và sống còn đối
   với các chuỗi cửa hàng vừa và nhỏ.
 + Các chuỗi cửa hàng bán lẻ điện thoại di động trên địa bàn thành phố Hồ Chí Minh đa số đều có các nghiệp vụ cơ bản như
@@ -123,13 +123,15 @@ ___
             + Chi phí duy trì và bảo trì hệ thống
     - Lợi ích (lợi nhuận mang lại):
         - Lợi nhuận hữu hình:
-            + Giảm chi phí, thời gian in ấn, chờ đợi làm thẻ khách hàng khi đổi thẻ, mất thẻ, (mỗi thẻ 100 nghìn đồng x
+            + Giảm chi phí, thời gian in ấn, chờ đợi làm thẻ khách hàng khi đổi thẻ, mất thẻ, (mỗi thẻ 100.000 VND x
               số lượng khách hàng thân thiết - 10000 khách hàng thân thiết)
+            + Giảm chi phí vận chuyển thẻ (mỗi lô thẻ gồm 100 thẻ có chi phí vận chuyển khoảng 20.000 VND)
+            + Giảm chi phí thông tin (cập nhật thông tin khách hàng/thông báo thay đổi chính sách/bảo hành/đổi trả) khi sử dụng điện thoại (2.000.000 VND/tháng)
         - Lợi nhuận vô hình:
             + Giảm công sức bảo quản và kiểm tra thẻ
             + Minh bạch thông tin khách hàng (giảm rủi ro khách hàng khiếu nại về quyền lợi khi sử dụng thẻ)
-            + Gia tăng tiện lợi cho khách hàng (không cần mang thẻ khi thanh toán, tự động áp dụng các thay đổi chính
-              sách khách hàng)
+            + Gia tăng tiện lợi cho khách hàng (không cần mang thẻ khi thanh toán, tự động áp dụng các thay đổi chính sách khách hàng)
+            + Thực hiện tốt hơn chính sách hậu mãi, bảo hành cho khách hàng
 
     2. Tính toán dòng tiền và xác định lợi ích:
        Chi phí ban đầu :
@@ -140,8 +142,8 @@ ___
       + Thiết bị mạng: 7.000.000 VND
       + Các thiết bị ngoại vi hỗ trợ người sử dụng: 4.000.000 VND
   Chi phí định kì:
-    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 3.000.000 - 12 tháng
-    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 3.000.000 VND - 12 tháng
+    - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 4.000.000 - 12 tháng
+    - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 4.000.000 VND - 12 tháng
   Lợi nhuận mang lại:
     - Đối với mỗi khách hàng có thẻ: không cần tốn 100.000 VND cho mỗi thẻ khách hàng.
     - Lượng khách hàng hiện tại là khách hàng thân thiết: 1000 khách hàng
@@ -151,21 +153,21 @@ ___
 
     |Năm|Năm 0|Năm 1|Năm 2| Năm 3|Năm 4|Năm 5|
     |---|-----|-----|-----|------|-----|-----|
-    |Lợi nhuận| 0.0| 12| 12| 12| 12| 12|
+    |Lợi nhuận| 0.0| 36| 36| 36| 36| 36|
     |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
-    |PV lợi nhuận| 0.0| 11.16| 10.44| 9.72| 9.12| 8.52|
-    |NPV lợi nhuận luỹ kế | 0.0| 11.16| 21.6| 31.32| 40.44| 48.96|
+    |PV lợi nhuận| 0.0| 33.64| 31.44| 29.39| 27.46| 25.67|
+    |NPV lợi nhuận luỹ kế | 0.0| 33.64| 65.09| 94.48| 121.94| 194.01|
     |Chi phí ban đầu | 61| | | | | |
-    |Chi phí định kì | 0.0| 6| 6| 6| 6| 6|
+    |Chi phí định kì | 0.0| 8| 8| 8| 8| 8|
     |Tỉ lệ giảm 7%| 0.0| 0.91| 0.87| 0.81| 0.76| 0.71|
-    |PV chi phí định kỳ| 0.0| 5.46| 5.22| 4.86| 4.56| 4.26|
-    |NPV chí phí luỹ kế| 61| 66.46| 71.68| 76.54| 81.1| 85.36|
+    |PV chi phí định kỳ| 0.0| 7.48| 6.99| 6.53| 5.7| 5.33|
+    |NPV chí phí luỹ kế| 61| 68.47| 75.46| 81.99| 88.1| 93.8|
 
 
 + Khả thi kỹ thuật
 
   |STT| Rủi ro | Đánh giá | Mô tả đánh giá | Mô tả khắc phục |
-      |---|--------|----------|----------------|-----------------|
+  |---|--------|----------|----------------|-----------------|
   |1|Sự quen thuộc của người dùng đối với các hệ thống tương tự | Trung bình | Nhân viên đã sử dụng máy tính tốt nhưng chưa có kinh nghiệm vận hành các hệ thống lớn | Training sử dụng hệ thống |
   |2|Sự quen thuộc với tiến trình phát triển hệ thống | Thấp | Nhân viên đã sử dụng quen thuộc các hệ thống khác được sử dụng trong công ty | |
   |3|Thay đổi tổ chức, cơ cấu | Thấp | Không ảnh hưởng nhiều đến hệ thống hiện tại| |
@@ -196,10 +198,32 @@ ___
 ## 4. Mô hình hóa phân tích hệ thống
 
 + Mô tả yêu cầu hệ thống
-    + Liệt kê và mô tả các yêu cầu chức năng hệ thống (ứng với từng nghiệp vụ hoặc từng loại người dùng)
-    + Sơ đồ use case hệ thống (system use-case)
-    + Liệt kê và mô tả yêu cầu phi chức năng
+  + Tác nhân hệ thống: Khách hàng, Nhân viên chăm sóc khách hàng, nhân viên kĩ thuật
+  + Liệt kê và mô tả các yêu cầu chức năng hệ thống (ứng với từng nghiệp vụ hoặc từng loại người dùng)
+    + Nhân viên chăm sóc khách hàng:
+      + Cung cấp thông tin chính xác thông tin mua hàng, lịch sử khuyến mãi và thông tin khách hàng nhận khuyến mãi
+      + Gửi thông tin đến khách hàng qua 1 hoặc nhiều kênh thông tin (email, notification thông qua ứng dụng)
+      + Lưu trữ hoá đơn, chứng từ, thông tin sản phẩm mà khách hàng mua hoặc đổi trả
+      + Tạo/xem hoá đơn bán hàng
+    + Nhân viên kỹ thuật:
+      + Hệ thống có khả năng cung cấp thông tin bảo hành, thông tin đổi trả (lịch sử bảo hành, thời hạn bảo hành,...)
+      + Hệ thống có khả năng kiểm tra được sản phẩm / hàng hoá do công ty bán hoặc khách hàng đổi trả
+      + Hỗ trợ thông báo với khách hàng về sản phẩm bảo hành/đổi trả/sửa chữa
+      + Tạo phiếu đổi trả, phiếu bảo hành cho khách hàng
+    + Khách hàng:
+      + Theo dõi thông tin mua hàng, thông tin khuyến mãi,...
+      + Yêu cầu đổi trả/bảo hành/sửa chữa
+      + Xem các chương trình khuyến mãi/ưu đãi đang diễn ra hoặc đủ điều kiện tham gia hay áp dụng
+      + Nhận thông báo về các ưu đãi/khuyến mãi thông qua các hình thức khách nhau (email, notification,...)
+  + Sơ đồ use case hệ thống (system use-case)
+  ![img.png](img\System_usecase.png)
+  + Liệt kê và mô tả yêu cầu phi chức năng
+    + Hệ thống luôn sẵn sàng ít nhất 20 giờ/ngày
+    + Kiểm tra và thực hiện cập nhật khuyến mãi/ưu đãi của khách hàng nhanh nhất có thể (tránh chờ đợi lâu khi thực hiện thanh toán)
+    + Đảm bảo thông tin khách hàng không bị lộ, mất khi thực hiện các tác vụ hệ thống
+    + Tiện lợi, dễ sử dụng cho khách hàng cũng như nhân viên vận hành hệ thống
 
 + Sơ đồ cấu trúc (analysis class diagram)
 
+  ![img.png](img\ClassDiagram.png)
 ___
