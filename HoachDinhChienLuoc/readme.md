@@ -5,7 +5,7 @@
 + 20C12007: Trần Đình Lâm
 + 20C12030: Huỳnh Lâm Phú Sĩ
 
-# Tên đề tài: "Hệ thống quản lý tài khoản khách hàng thân thiết cho chuỗi cửa hàng điện thoại di động"
+# Tên đề tài: "Hệ thống quản lý chăm sóc khách hàng thân thiết cho chuỗi cửa hàng điện thoại di động"
 
 ## Mô tả mục đích: Hệ thống đáp ứng nhu cầu tra cứu, cập nhật thông tin khách hàng thân thiết của một chuỗi cửa hàng kinh doanh điện thoại di động, nhằm mang đến kịp thời các ưu đãi, dịch vụ chăm sóc khách hàng,... thống nhất cho tất cả các chuỗi cửa hàng, hướng đến mục tiêu mở rộng kinh doanh
 

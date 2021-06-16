@@ -10,8 +10,9 @@ ___
     + Mô tả bằng văn bản, mô hình hóa qui trình (dùng activity diagram, business object diagram)
     + Nêu và phân tích các vấn đề tồn tại (vd: không đồng bộ, xử lý cầu kỳ, chi phí cao, thời gian dài, …)
     + Phân tích cải tiến (có thể liên hệ các phương pháp phân tích BPA, BPI, BPR để đưa ra giải pháp cho vấn đề nêu
-      trên). Vẽ lại qui trình (activity diagram) nếu qui trình nghiệp vụ thay đổi. Hiện trạng CNT T: nêu tình trạng về
-      mạng, phần cứng,
+      trên).
+    + Vẽ lại qui trình (activity diagram) nếu qui trình nghiệp vụ thay đổi.
+    + Hiện trạng CNTT: nêu tình trạng về mạng, phần cứng,
 + phần mềm và phân tích khả năng đáp ứng.
 
 ___
@@ -39,7 +40,7 @@ ___
 **Sơ đồ ngữ cảnh toàn bộ nghiệp vụ**
 
 **Tham khảo**
-![img.png](img/thamkhaosodongucanh.png)
+
 **Vẽ lại sơ đồ DFD mức 0**
 ![img.png](img/SoDoNguCanh.png)
 
@@ -105,6 +106,53 @@ Các thực thể nghiệp vụ tham gia vào các nghiệp vụ này bao gồm:
 
 **Sơ đồ Activity Diagram cho các use case được chọn**
 
++ use case mua hàng:
+  ![](img/HoachdinhChienLuocSoDo-ActivityDiagramHienTai_muahang.png)
+
++ use case xem thông tin cá nhân:
+  ![img.png](img/activity_xemthongtincanhan.png)
+
++ use case gửi yêu cầu hậu mãi:
+  ![img.png](img/activity_guiyeucauhaumai.png)
++ use case nhận khuyến mãi: (chưa vẽ chi tiết được)
+  ![img.png](img/activity_nhankhuyenmai.png)
+
+#### 4. Chỉ ra vấn đề:
+
+_Phác thảo sơ lược các vấn đề_
+
++ use case mua hàng:
+    + cửa hàng không quản lý thông tin tài khoản của khách hàng, mà chỉ sử dụng số điện thoại của khách hàng để làm tham
+      chiếu cho các nghiệp vụ hậu mãi phát sinh sau này.
+    + sau khi thanh toán hóa đơn, nhân viên phải ghi phiếu bảo hành và gửi lại cho khách hàng kèm hóa đơn và sản phẩm.
+      => điều này buộc khách hàng giữ lại phiếu bảo hành kèm hóa đơn trong suốt thời hạn bảo hành (thường 6-12 tháng).
+    +
+
++ use case xem thông tin cá nhân:
+    + Thông tin hiển thị quá ngắn gọn, chỉ hiển thị tổng quan
+    + Chưa thu thập được một số thông tin cơ bản của khách hàng như họ tên, ngày sinh,..
+    + Chưa liệt kê được lịch sử mua hàng, bảo hành, đổi trả
+
+
++ use case gửi yêu cầu hậu mãi:
+    + Lượng thủ tục từ khách hàng ở bước đầu tiên khá lớn, nhiều khả năng khách hàng không cung cấp đủ giấy tờ thủ tục
+    + Thời gian hẹn trả sản phẩm khi bảo hành thường cố định (1-2 tuần), trong khi thời gian thực sửa chữa thường ngắn
+      hơn. Hệ thống chưa có thông báo tình trạng sửa chữa cho khách hàng
+    + Chưa tách bạch được loại dịch vụ hậu mãi (bảo hành sửa chữa/đổi hàng/trả hàng hoàn tiền) mà vẫn cùng chung quy
+      trình.
+
++ use case nhận khuyến mãi, ưu đãi:
+    +
+
+#### 5. Đưa ra giải pháp bằng các phương pháp phân tích cải tiến BPA, BPI, BPR :
+
++ use case mua hàng:
+
++ use case xem thông tin cá nhân:
+
++ use case gửi yêu cầu hậu mãi:
+
++ use case xem thông tin cá nhân:
 
 ___ 
 
@@ -115,8 +163,8 @@ ___
 
     - Chi phí của dự án bao gồm:
         - Chí phí ban đầu:
-            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 2 người backend, 2 người frontend, chi phí cho
-              lương mỗi người khoảng 20 triệu đồng/tháng)
+            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 1 phân tích viên, 1 thiết kế hệ thống, 1 người
+              backend, 1 người frontend, chi phí cho lương mỗi người khoảng 20 triệu đồng/tháng)
             + Chí phí đầu tư hệ thống (máy chủ server)
             + Chi phí đào tạo nhân viên sử dụng hệ thống
         - Chi phí định kì:
@@ -193,6 +241,27 @@ ___
 
 ## 3. Kế hoạch thực hiện
 
+### 3.1 Xác định các nguồn lực và nhiệm vụ
+
++ Nhân lực:
+    + 1 phân tích viên, thiết kế viên hệ thống
+    + 1 kỹ sư backend
+    + 1 kỹ sư Web front-end
+    + 1 Web designer
+
++ Các nhiệm vụ chính:
+    + Thu thập yêu cầu hệ thống
+    + Phân tích hệ thống
+    + Thiết kế kiến trúc hệ thống
+    + Thiết kế dữ liệu
+    + Thiết kế giao diện
+    + Cài đặt lập trình Backend
+    + Cài đặt lập trình Frontend
+    + Kiểm thử
+    + Biên soạn tài liệu
+
+### 3.2 Phác thảo Thứ tự thực hiện các công việc bằng sơ đồ Gantt
+![img.png](img/KeHoachThucHien.png)
 ___ 
 
 ## 4. Mô hình hóa phân tích hệ thống
