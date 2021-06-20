@@ -163,8 +163,8 @@ ___
 
     - Chi phí của dự án bao gồm:
         - Chí phí ban đầu:
-            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 1 phân tích viên, 1 thiết kế hệ thống, 1 người
-              backend, 1 người frontend, chi phí cho lương mỗi người khoảng 20 triệu đồng/tháng)
+            + Chi phí thuê nhóm phát triển (nhóm phát triển 4 người gồm 1 phân tích viên, 1 người
+              backend, 1 người frontend, 1 web designer chi phí cho lương mỗi người khoảng 20 triệu đồng/tháng)
             + Chí phí đầu tư hệ thống (máy chủ server)
             + Chi phí đào tạo nhân viên sử dụng hệ thống
         - Chi phí định kì:
@@ -285,7 +285,7 @@ ___
       + Xem các chương trình khuyến mãi/ưu đãi đang diễn ra hoặc đủ điều kiện tham gia hay áp dụng
       + Nhận thông báo về các ưu đãi/khuyến mãi thông qua các hình thức khách nhau (email, notification,...)
   + Sơ đồ use case hệ thống (system use-case)
-  ![img.png](img\System_usecase.png)
+  ![img.png](img/System_usecase.png)
   + Liệt kê và mô tả yêu cầu phi chức năng
     + Hệ thống luôn sẵn sàng ít nhất 20 giờ/ngày
     + Kiểm tra và thực hiện cập nhật khuyến mãi/ưu đãi của khách hàng nhanh nhất có thể (tránh chờ đợi lâu khi thực hiện thanh toán)
@@ -294,5 +294,5 @@ ___
 
 + Sơ đồ cấu trúc (analysis class diagram)
 
-  ![img.png](img\ClassDiagram.png)
+  ![img.png](img/ClassDiagram.png)
 ___
