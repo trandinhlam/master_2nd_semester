@@ -184,7 +184,7 @@ ___
     2. Tính toán dòng tiền và xác định lợi ích:
        Chi phí ban đầu :
 
-    - Chí phí phát triển hệ thống thông tin: 4 x 10.000.000 = 40.000.000 VND
+    - Chí phí phát triển hệ thống thông tin: 3 x 4 x 10.000.000 = 120.000.000 VND
     - Chi phí mua sắm phần cứng (máy chủ, màn hình, thiết bị mạng,...): 21.000.000 VND
       + Máy chủ server: 15.000.000 VND
       + Thiết bị mạng: 7.000.000 VND
@@ -205,11 +205,11 @@ ___
     |Tỉ lệ giảm 7%| 0.0| 0.93| 0.87| 0.81| 0.76| 0.71|
     |PV lợi nhuận| 0.0| 33.64| 31.44| 29.39| 27.46| 25.67|
     |NPV lợi nhuận luỹ kế | 0.0| 33.64| 65.09| 94.48| 121.94| 194.01|
-    |Chi phí ban đầu | 61| | | | | |
+    |Chi phí ban đầu | 141| | | | | |
     |Chi phí định kì | 0.0| 8| 8| 8| 8| 8|
     |Tỉ lệ giảm 7%| 0.0| 0.91| 0.87| 0.81| 0.76| 0.71|
     |PV chi phí định kỳ| 0.0| 7.48| 6.99| 6.53| 5.7| 5.33|
-    |NPV chí phí luỹ kế| 61| 68.47| 75.46| 81.99| 88.1| 93.8|
+    |NPV chí phí luỹ kế| 141| 148.48| 75.46| 81.99| 88.1| 93.8|
 
 
 + Khả thi kỹ thuật
