@@ -3,8 +3,7 @@
 + Thiết kế chức năng
 + Thiết kế CSDL
 + Thiết kế giao diện
-+ Thiết kế kiến trúc (mô hình cơ sở hạ tầng kiến trúc và các cấu hình phần cứng/thiết bị để cài đặt và triển khai hệ
-  thống. Chú ý kiến trúc phải được thiết kế đáp ứng các nhu cầu phi chức năng liên quan)
++ Thiết kế kiến trúc (mô hình cơ sở hạ tầng kiến trúc và các cấu hình phần cứng/thiết bị để cài đặt và triển khai hệ thống. Chú ý kiến trúc phải được thiết kế đáp ứng các nhu cầu phi chức năng liên quan)
 
 ## 1. Thiết kế chức năng hệ thống
 
@@ -34,4 +33,8 @@
 + Use case "Kiểm tra ưu đãi/khuyến mãi khách hàng"
   ![img.png](img/sequence_cskh.png)
 
+## 2. Thiết kế cơ sở dữ liệu
+![img.png](img/ER_Diagram.png)
 
+## 3. Thiết kế kiến trúc
+![img.png](img/Architech.png)
