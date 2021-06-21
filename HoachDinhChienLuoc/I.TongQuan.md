@@ -13,12 +13,12 @@ ____
 
 + Lĩnh vực kinh doanh: thiết bị điện tử, điện thoại di động
 + Phòng ban thực hiện nghiệp vụ: bộ phận chăm sóc khách hàng
-+ Phạm vi hệ thống: toàn khu vực miền Nam
-+ Bối cảnh nghiệp vụ: Hiện tại đang quản lí thông tin khách hàng bằng thẻ vật lí, khách hàng đi đến các cửa hàng của
-  chuỗi phải mang theo thẻ để được nhận ưu đãi, tích điểm, khuyến mãi và chính sách giao hàng. Điều này gây ra phiền
-  toái cho khách hàng (khó tổng hợp thông tin)
++ Phạm vi hệ thống: các chi nhánh ở TPHCM
++ Bối cảnh nghiệp vụ: Hiện tại đang quản lí thông tin khách hàng bằng phiếu vật lý, và chỉ thông qua số điện thoại,
+  khách hàng đi đến các cửa hàng của chuỗi phải mang theo thẻ để được nhận ưu đãi, tích điểm, khuyến mãi và chính sách
+  giao hàng. Điều này gây ra phiền toái cho khách hàng (khó tổng hợp thông tin)
 + Mục tiêu của dự án:
-    - Ngắn hạn: Giải quyết các bất cập khi sử dụng thẻ vật lí, giảm thời gian chờ đợi, thủ tục
+    - Ngắn hạn: Giải quyết các bất cập khi sử dụng nhiều giấy tờ chứng từ vật lý, giảm thời gian chờ đợi, thủ tục
     - Dài hạn: Tạo tiền đề để mở rộng quy mô chuỗi, tăng doanh số khách hàng nhờ vào quản lí khách hàng đồng bộ.
 + Giá trị: Tiết kiệm chi phí làm thẻ, tiết kiệm thời gian cho khách hàng, không cần thực hiện quản lí thẻ, dễ dàng thu
   thập thông tin khách hàng, dễ dàng triển khai các chương trình khuyến mãi, marketing.

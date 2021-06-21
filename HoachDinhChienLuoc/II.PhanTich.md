@@ -29,7 +29,7 @@ ___
   trăm. Vì thế yêu cầu cải tiến hệ thống để gia tăng chất lượng dịch vụ bán hàng là yêu cầu cấp thiết và sống còn đối
   với các chuỗi cửa hàng vừa và nhỏ.
 + Các chuỗi cửa hàng bán lẻ điện thoại di động trên địa bàn thành phố Hồ Chí Minh đa số đều có các nghiệp vụ cơ bản như
-  sau:
+  sau đây là ví dụ của chuỗi bán lẻ XTMobile:
     + Quản lý nhập xuất hàng (Nhập sản phẩm vào kho, xuất sản phẩm ra kho, kiểm tra chất lượng)
     + Quản lý thông tin nhân viên (nhân viên bán hàng, nhân viên giao hàng, đội ngũ kỹ thuật)
     + Quản lý khách hàng
