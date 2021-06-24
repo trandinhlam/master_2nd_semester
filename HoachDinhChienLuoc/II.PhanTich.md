@@ -52,7 +52,7 @@ ___
   xoay quanh quyền lợi, trải nghiệm của khách hàng. Vì vậy dự án này tập trung hướng đến cải tiến các quy trình phục vụ
   quyền lợi và trải nghiệm của đối tượng khách hàng.
 
-#### 2. Giới hạn phạm vi ngenghiệp vụ mà dự án tập trung cải tiến
+#### 2. Giới hạn phạm vi nghiệp vụ mà dự án tập trung cải tiến
 
 Phạm vi nghiệp vụ chủ yếu của dự án HTTT này là tập trung cải tiến quy trình quản lý tài khoản khách hàng, cụ thể là:
 
