@@ -192,6 +192,7 @@ ___
   Chi phí định kì:
     - Chi phí cập nhật và bảo trì phần mềm (cập nhật phần mềm, môi trường, thay đổi chính sách, mở rộng hệ thống): 4.000.000 - 12 tháng
     - Chi phí bảo trì phần cứng (bảo trì hệ thống mạng, kiểm tra hệ thống định kì, vệ sinh hệ thống): 4.000.000 VND - 12 tháng
+    
   Lợi nhuận mang lại:
     - Đối với mỗi khách hàng có thẻ: không cần tốn 100.000 VND cho mỗi thẻ khách hàng.
     - Lượng khách hàng hiện tại là khách hàng thân thiết: 1000 khách hàng
