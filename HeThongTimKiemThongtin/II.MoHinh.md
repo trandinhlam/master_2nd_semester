@@ -8,6 +8,35 @@
 
 ### information retrieval
 
+## Similarity:
+
++ https://lucene.apache.org/core/3_0_3/api/core/org/apache/lucene/search/Similarity.html#formula_norm
++ https://lucene.apache.org/core/6_6_0/core/org/apache/lucene/search/similarities/
+
++ Đây là các class định nghĩa các thành phần tính điểm tương đồng trong Lucene:
+
+### TFIDFSimilarity:
+
++ Lucene kết hợp Boolean model và Vector Space Model: document chọn bởi BM sẽ được tính điểm bởi VSM
++ document và query được biểu diễn dưới dạng vector trọng số trong không gian nhiều chiều, mỗi term là một chiều, và
+  trọng số là giá trị tf-idf
++ Gọi term t và document/query x, ta có Tf(t,x)xidf(t) là trọng số trên mỗi chiều của vector V(q) và V(d). Ta tính điểm
+  giữa document d và query q bằng Cosine Similarity.
+  ![img_1.png](img/img_1.png)
+
++ Lucene tinh chế lại điểm VSM cho cả quality (chất lượng) và usability (khả năng sử dụng)
++
+
+### Lucene's Conceptual Scoring Formula
+
+![img_2.png](img/img_2.png)
+
++ Công thức tính điểm tổng quát của Lucene
+
+### Lucene's Practical Scoring Function
+
+____
+
 ## 2.2 Mô hình cài đặt vật lý bằng Java
 
 ### Các thành phần chính trong Indexing:
@@ -30,6 +59,18 @@
     + UnIndexed
     + UnStored
     + Text
+
+![img_1.png](img/IndexWriter.png)
+
+#### IndexingChain
+
+
+#### Sử dụng Document Boosting để thể hiện tầm quan trọng của document
+
++ Index-time boosting
++ Query-time boosting
+
+____
 
 ### Các thành phần chính trong Searching:
 
@@ -63,10 +104,12 @@
 
 + stored: Loại index này lưu trữ toàn bộ input thành văn bản
 + tokenized: kết quả của mỗi từ được xem như một term (là key) gắn với các Document (inverted index)
-+ termVector: Dành cho keyword highlighting và similarity matching
-+ omitNorm: This saves memory, but at the expense of scoring quality (length normalization will be disabled), and if you
-  omit norms, you cannot use index-time boosts.
-+ indexOptions:
++ termVector: đánh dấu mỗi term bằng bộ 3 {term value, frequencies, position}. Dành cho keyword highlighting và
+  similarity matching.
++ omitNorm: tính ra hệ số tương quan. Mỗi document sẽ được tính và lưu riêng biệt. This saves memory, but at the expense
+  of scoring quality (length normalization will be disabled), and if you omit norms, you cannot use index-time boosts.
+
++ indexOptions: các option cho việc lưu trữ inverted index
     + NONE: Nothing saved
     + DOCS: stores only DocId
     + DOCS_AND_FREQS: storing DocId AND FREQUENCY (Term Freq)
@@ -119,3 +162,4 @@ _______
 ## Lucene Query Parser
 Lucene là một framework, nó cung cấp khả năng để người dùng tạo query của họ thông qua các API, nó cũng cung cấp sẵn một query language mạnh mẽ thông qua Query Parser - một bộ thông dịch từ chuỗi thành truy vấn Lucene
  
+![img.png](img.png)

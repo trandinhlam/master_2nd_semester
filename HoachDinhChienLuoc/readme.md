@@ -93,3 +93,10 @@ ___
 
 ## IV. Triển khai (mô hình và kế hoạch triển khai)
 
++ Đi sâu hơn vào hệ thống
++ Đề tài cần hẹp hơn, đi sâu hơn, chọn luôn gửi YC hậu mãi
++ Trình bày logic - mạch lạc
++ Thứ tự phải đảm bảo để người nghe nắm được
++ Đảm bảo đủ thời gian, không nên trình bày lố giờ, chỉ nói cái quan trọng
++ Tránh trình bày lại vấn đề
++ Nộp report deadline 24/07

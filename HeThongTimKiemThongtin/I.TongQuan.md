@@ -10,11 +10,16 @@
 + https://www.programmersought.com/article/36231500859/
 + https://www.programmersought.com/article/6597405831/
 + https://www.programmersought.com/article/54002035220
-+ https://www.programmersought.com/article/49503678348/
++ https://www.programmersought.com/article/49503678348/ Lucene query principle and analysis
 + https://github.com/Apress/practical-apache-lucene-8
 + Lucene in action
 + https://en.wikipedia.org/wiki/Apache_Lucene
 + https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture5.pdf
++ https://cwiki.apache.org/confluence/display/LUCENE/ConceptsAndDefinitions
+
+## Mô hình class đã dựng
+
++ https://drive.google.com/file/d/1BmO0wzxeCoEpEqloyaFY6CQgMh64dZH1/view?usp=sharing
 
 _______
 ![img.png](img/home.png)
