@@ -113,6 +113,9 @@ Trong công thưc này ta có:
   - norm (t,d): tập hợp lại một vài thành phần boost và độ dài văn bản:
     + documentBoost: được set bởi doc.setBoost() trước khi thêm văn bản vào index
     + fieldBoost: được set bởi field.setBoost() trước khi thêm field vào văn bản
-    + lengthNorm(field): được tính toán khi tài liệu được thếm vào index 
+    + lengthNorm(field): được tính toán khi tài liệu được thêm vào index sao cho phù hợp với 
 _______
 
+## Lucene Query Parser
+Lucene là một framework, nó cung cấp khả năng để người dùng tạo query của họ thông qua các API, nó cũng cung cấp sẵn một query language mạnh mẽ thông qua Query Parser - một bộ thông dịch từ chuỗi thành truy vấn Lucene
+ 
