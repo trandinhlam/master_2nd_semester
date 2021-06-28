@@ -2,7 +2,9 @@
 
 ## Đối sánh với mô hình chuẩn
 
-### Mô hình chuẩn của vector space model
+![img_1.png](img/mohinhtongquat.png)
+
+### Mô hình chuẩn
 
 ![img.png](img/basic_IR_structure.png)
 
@@ -11,7 +13,6 @@
 + Tập Document D(d1,d2,d3,...)
 
 ### Một số trick của Lucene khi sử dụng intevertedIndex
-
 
 ## Đối sánh với một mô hình tương đương
 

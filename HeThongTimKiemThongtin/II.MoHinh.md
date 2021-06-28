@@ -64,7 +64,6 @@ ____
 
 #### IndexingChain
 
-
 #### Sử dụng Document Boosting để thể hiện tầm quan trọng của document
 
 + Index-time boosting
@@ -87,9 +86,7 @@ ____
     + RangeQuery
     + FilteredQuery
     + SpanQuery
-+ TermQuery
-+ Hits:
-    + Lưu chứa một đoạn kết quả trả về (đã được ranking)
++ Hits: Lưu chứa một đoạn kết quả trả về (đã được ranking)
 
 ### Sử dụng Term vector
 
@@ -139,27 +136,52 @@ https://lucene.apache.org/core/3_0_3/api/core/org/apache/lucene/search/Similarit
 ![img_2.png](img/img_2.png)
 
 Các thành phần trong công thức trên:
-  - coord-factor(q,d): hệ số phối hợp - một tài liệu có thể khớp với một hoặc nhiều term trong câu truy vấn mà không nhất thiết phải chứa tất cả các term của câu truy vấn. Do đó ngừoi dùng có thể thưởng thêm cho tài liều mà khớp nhiều query term hơn thông qua hệ số này.
-  - query-boost(q): Tại thừoi điểm tìm kiếm, user có xác định chỉ số boost cho mỗi query, term và sub-query trong truy vấn đó. Mức đóng góp của cụm từ vào điểm của tài liệu được nhân với chỉ số này.
-  - doc-boost(d): Khi lập chỉ mục thì người dùng có thể chỉ định tài liệu nào qua trọng hơn những tài liệu khác bằng các sử dụng giá trị doc-boost(d). Điểm của tài liệu sẽ được nhân với giá trị doc-boost(d) của tài liệu đó.
-  - doc-len-norm(d): Chuẩn hoá tài liệu thành vector đơn vị có vấn đề là nó sẽ loại bỏ tất cả các thông tin về độ dài tài liệu. Đối với một vài tài liệu thì việc này sẽ ít ảnh hưởng, ví dụ một tài liệu được tạo ra bằng cách sao chép một đoạn văn bản nhất định 10 lần, đặc biệt là đối với các đoạn văn có nhiều từ đặc biệt. Nhưng với các văn bản khác, điều này có thể gây sai. Để hạn chế vấn đề này, hệ số chuẩn hoá được sử dụng để chuẩn hoá một vector lớn hơn hoặc bằng một vector đơn vị
+
+- coord-factor(q,d): hệ số phối hợp - một tài liệu có thể khớp với một hoặc nhiều term trong câu truy vấn mà không nhất
+  thiết phải chứa tất cả các term của câu truy vấn. Do đó ngừoi dùng có thể thưởng thêm cho tài liều mà khớp nhiều query
+  term hơn thông qua hệ số này.
+- query-boost(q): Tại thừoi điểm tìm kiếm, user có xác định chỉ số boost cho mỗi query, term và sub-query trong truy vấn
+  đó. Mức đóng góp của cụm từ vào điểm của tài liệu được nhân với chỉ số này.
+- doc-boost(d): Khi lập chỉ mục thì người dùng có thể chỉ định tài liệu nào qua trọng hơn những tài liệu khác bằng các
+  sử dụng giá trị doc-boost(d). Điểm của tài liệu sẽ được nhân với giá trị doc-boost(d) của tài liệu đó.
+- doc-len-norm(d): Chuẩn hoá tài liệu thành vector đơn vị có vấn đề là nó sẽ loại bỏ tất cả các thông tin về độ dài tài
+  liệu. Đối với một vài tài liệu thì việc này sẽ ít ảnh hưởng, ví dụ một tài liệu được tạo ra bằng cách sao chép một
+  đoạn văn bản nhất định 10 lần, đặc biệt là đối với các đoạn văn có nhiều từ đặc biệt. Nhưng với các văn bản khác, điều
+  này có thể gây sai. Để hạn chế vấn đề này, hệ số chuẩn hoá được sử dụng để chuẩn hoá một vector lớn hơn hoặc bằng một
+  vector đơn vị
 
 ### Lucene's Practical Scoring Function
+
 ![img.png](img/Lucene-Practical-Scoring-function.png)
 
 Trong công thưc này ta có:
-  - tf(t in d): term's frequency được tính bởi công thức
-  - idf(t): inverse document frequency được tính bởi công thức
-  - coor(d,q): là thành phần điểm dựa trên bao nhiêu query-term được tìm thấy trong tài liệu. 
-  - querryNorm(q): hệ số chuẩn hoá được sử dụng để so sánh điểm số giữa các truy vấn. Nó không ảnh hưởng đến xếp hạng tài liệu mà nó làm cho điểm từ các truy vấn khác nhau với các chỉ mục khác nhau có thể so sánh được. Nó được tính toán bởi công thức sau
-  - t.getBoost(): là chỉ số boost của term t trong query q (được đặc tả trong query text) hoặc được set bởi ứng dụng gọi setBoost(). 
-  - norm (t,d): tập hợp lại một vài thành phần boost và độ dài văn bản:
+
+- tf(t in d): term's frequency được tính bởi công thức
+- idf(t): inverse document frequency được tính bởi công thức
+- coor(d,q): là thành phần điểm dựa trên bao nhiêu query-term được tìm thấy trong tài liệu.
+- querryNorm(q): hệ số chuẩn hoá được sử dụng để so sánh điểm số giữa các truy vấn. Nó không ảnh hưởng đến xếp hạng tài
+  liệu mà nó làm cho điểm từ các truy vấn khác nhau với các chỉ mục khác nhau có thể so sánh được. Nó được tính toán bởi
+  công thức sau
+- t.getBoost(): là chỉ số boost của term t trong query q (được đặc tả trong query text) hoặc được set bởi ứng dụng gọi
+  setBoost().
+- norm (t,d): tập hợp lại một vài thành phần boost và độ dài văn bản:
     + documentBoost: được set bởi doc.setBoost() trước khi thêm văn bản vào index
     + fieldBoost: được set bởi field.setBoost() trước khi thêm field vào văn bản
-    + lengthNorm(field): được tính toán khi tài liệu được thêm vào index sao cho phù hợp với 
+    + lengthNorm(field): được tính toán khi tài liệu được thêm vào index sao cho phù hợp với
+
 _______
 
 ## Lucene Query Parser
-Lucene là một framework, nó cung cấp khả năng để người dùng tạo query của họ thông qua các API, nó cũng cung cấp sẵn một query language mạnh mẽ thông qua Query Parser - một bộ thông dịch từ chuỗi thành truy vấn Lucene
- 
-![img.png](img.png)
+
+Lucene là một framework, nó cung cấp khả năng để người dùng tạo query của họ thông qua các API, nó cũng cung cấp sẵn một
+query language mạnh mẽ thông qua Query Parser - một bộ thông dịch từ chuỗi thành truy vấn Lucene
+_____
+
+## Cấu trúc đã vẽ
+
+![img_1.png](img/lucene_classStruct.png)
+
+## Chi tiết về Term Dictionary
+
+![img.png](LuceneProject/termDictionary.png)
+![img.png](termDictionaryFlow.png)
