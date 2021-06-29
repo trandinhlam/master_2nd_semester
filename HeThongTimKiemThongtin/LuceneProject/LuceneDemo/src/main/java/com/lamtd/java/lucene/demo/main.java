@@ -14,6 +14,9 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.similarities.BooleanSimilarity;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
+import org.apache.lucene.search.similarities.TFIDFSimilarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -24,17 +27,19 @@ public class main {
     public static void main(String[] args) throws IOException, ParseException {
         _index();
         _search();
+        BooleanSimilarity
     }
 
     private static final String fieldName = "fieldName";
     private static final String PATH = "data/log/lucene/index";
-    private static final String text = "This is the text to be indexted.";
+    private static final String text = "anh di duong anh";
 
 
     private static void _index() throws IOException {
         Analyzer analyzer = new StandardAnalyzer();
         //Store index in mem
         IndexWriterConfig conf = new IndexWriterConfig(analyzer);
+        conf.setSimilarity(new ClassicSimilarity());
 //        Directory directory = new RAMDirectory();
         Directory directory = FSDirectory.open(Path.of(PATH));
         IndexWriter iWriter = new IndexWriter(directory, conf);
