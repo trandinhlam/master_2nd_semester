@@ -1,5 +1,6 @@
 
 BusinessIntelligence/.idea/
+BusinessIntelligence/caidat/CoPhieu68Crawler/.idea/
 BusinessIntelligence/baitap03/
 
 HoachDinhChienLuoc/.idea/
@@ -7,3 +8,4 @@ HoachDinhChienLuoc/.idea/
 HeThongTimKiemThongtin/LuceneProject/LuceneDemo/.idea/
 
 HeThongTimKiemThongtin/LuceneProject/LuceneDemo/data/log/
+*.class
