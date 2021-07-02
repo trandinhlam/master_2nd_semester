@@ -16,7 +16,7 @@
 + https://en.wikipedia.org/wiki/Apache_Lucene
 + https://www.cl.cam.ac.uk/teaching/1415/InfoRtrv/lecture5.pdf
 + https://cwiki.apache.org/confluence/display/LUCENE/ConceptsAndDefinitions
-
++ https://laptrinhx.com/text-processing-part-2-inverted-index-2318844023/#
 ## Mô hình class đã dựng
 
 + https://drive.google.com/file/d/1BmO0wzxeCoEpEqloyaFY6CQgMh64dZH1/view?usp=sharing

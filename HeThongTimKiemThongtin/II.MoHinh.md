@@ -184,4 +184,4 @@ _____
 ## Chi tiết về Term Dictionary
 
 ![img.png](LuceneProject/termDictionary.png)
-![img.png](termDictionaryFlow.png)
+![img.png](img/termDictionaryFlow.png)
