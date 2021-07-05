@@ -171,10 +171,9 @@ Trong công thưc này ta có:
 
 _______
 
-## Lucene Query Parser
+## Mô hình similarity BM25 (Okapi BM25)
+Phương pháp xếp hạng similarity dựa trên mô hình xác suất. BM25 là phương pháp xếp hạng tương tự như TF-IDF được sử dụng rộng rãi trong tìm kiếm và tính độ tương đồng.
 
-Lucene là một framework, nó cung cấp khả năng để người dùng tạo query của họ thông qua các API, nó cũng cung cấp sẵn một
-query language mạnh mẽ thông qua Query Parser - một bộ thông dịch từ chuỗi thành truy vấn Lucene
 _____
 
 ## Cấu trúc đã vẽ
