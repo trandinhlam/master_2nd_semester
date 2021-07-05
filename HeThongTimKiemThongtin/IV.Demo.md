@@ -6,6 +6,13 @@
 
 ## Demo nâng cao
 
+### SpellChecker
+
++ Sử dụng Ngram analyzer
++ Khoảng cách Levensshtein
+
+### Suggester
+
 _______
 
 

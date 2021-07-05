@@ -1,0 +1,62 @@
+package com.lamtd.java.lucene.spellcheck;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
+
+import java.io.IOException;
+import java.nio.file.Path;
+
+
+public class Common {
+    public static final String FIELD_ENG = "eng";
+    public static final String FIELD_VN = "vn";
+    public static final String FILE_PATH = "data/input/dict.csv";
+    public static final String INDEX_PATH = "data/index";
+    public static Analyzer standardAnalyzer = new StandardAnalyzer();
+
+    static IndexWriter iWriter;
+    static IndexReader iReader;
+    static IndexSearcher searcher;
+
+    public static IndexWriter getIndexWriter() throws IOException {
+        if (iWriter == null) {
+            synchronized (INDEX_PATH) {
+                Analyzer analyzer = new StandardAnalyzer();
+                //Store index in mem
+                IndexWriterConfig conf = new IndexWriterConfig(analyzer);
+                conf.setSimilarity(new ClassicSimilarity());
+                Directory directory = FSDirectory.open(Path.of(INDEX_PATH));
+                iWriter = new IndexWriter(directory, conf);
+            }
+        }
+        return iWriter;
+    }
+
+    public static IndexReader getIndexReader() throws IOException {
+        if (iReader == null) {
+            synchronized (INDEX_PATH) {
+                Directory dir = FSDirectory.open(Path.of(INDEX_PATH));
+                iReader = DirectoryReader.open(dir);
+            }
+        }
+        return iReader;
+    }
+
+
+    public static IndexSearcher getIndexSearcher() throws IOException {
+        if (searcher == null) {
+            synchronized (INDEX_PATH) {
+                searcher = new IndexSearcher(getIndexReader());
+            }
+        }
+        return searcher;
+    }
+}
