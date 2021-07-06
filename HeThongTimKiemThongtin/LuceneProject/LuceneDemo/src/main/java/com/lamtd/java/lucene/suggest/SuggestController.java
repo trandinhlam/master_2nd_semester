@@ -11,6 +11,7 @@ import com.lamtd.java.lucene.spellcheck.Common;
 import com.lamtd.java.lucene.spellcheck.EnglishSpellChecker;
 import com.lamtd.java.lucene.spellcheck.English_VN_Searcher;
 import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.search.spell.SuggestMode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +26,9 @@ public class SuggestController {
 
     @GetMapping(value = "/search", produces = "application/json")
     public JsonNode search(@RequestParam("key") String key) throws IOException, ParseException {
+        if (key == null || key.isEmpty()) {
+            return null;
+        }
         LinkedHashMap<String, String> search = English_VN_Searcher.search(key);
         JsonObject rs = new JsonObject();
         JsonArray items = new JsonArray();
@@ -40,7 +44,24 @@ public class SuggestController {
     }
 
     @GetMapping(value = "/check", produces = "application/json")
-    public String[] check(@RequestParam("key") String key) throws IOException, ParseException {
-        return EnglishSpellChecker.suggest(key);
+    public String[] check(@RequestParam("key") String key, @RequestParam("strmode") String strmode) throws IOException, ParseException {
+        if (key == null || key.isEmpty()) {
+            return null;
+        }
+        SuggestMode mode = SuggestMode.SUGGEST_WHEN_NOT_IN_INDEX;
+        if (strmode != null && !strmode.isEmpty()) {
+            switch (strmode) {
+                case "popular":
+                    mode = SuggestMode.SUGGEST_MORE_POPULAR;
+                    break;
+                case "always":
+                    mode = SuggestMode.SUGGEST_ALWAYS;
+                    break;
+            }
+            LinkedHashMap<String, String> search = English_VN_Searcher.search(key);
+            return search.keySet().toArray(new String[0]);
+        } else {
+            return EnglishSpellChecker.suggest(key, mode);
+        }
     }
 }

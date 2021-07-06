@@ -32,4 +32,9 @@ public class English_VN_Indexer {
         }
         writer.commit();
     }
+
+    public static void main(String[] args) throws IOException {
+        index();
+
+    }
 }
