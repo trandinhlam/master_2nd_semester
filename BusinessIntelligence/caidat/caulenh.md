@@ -7,14 +7,15 @@ http://praitheesh.blogspot.com/2013/10/oracle-developer-day-vm-how-to-use-pre.ht
 Oracle Warehouse Builder:
 https://www.oracle.com/database/technologies/warehouse/downloads.html#
 
+<<<<<<< Updated upstream
 # windows xp demo OWB
 
 + https://www.youtube.com/watch?v=56PMZej3yPg&ab_channel=RamchandraMishra
+>>>>>>> Stashed changes
 
-# Oracle Data Integrator (ODI)
 
-# Oracle Warehouse Builder
 
+<<<<<<< Updated upstream
 "QM@B-cZCu?+53.
 
 ____

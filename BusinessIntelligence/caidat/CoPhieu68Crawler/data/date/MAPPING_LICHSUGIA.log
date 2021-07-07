@@ -1,0 +1,116 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on Sun Jul 4 17:02:08 2021
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   C:\Users\LAP11777-local\Documents\GitHub\backup2\master_2nd_semester\BusinessIntelligence\caidat\CoPhieu68Crawler\data\date\MAPPING_LICHSUGIA.ctl
+Character Set WE8MSWIN1252 specified for all input.
+
+Data File:      C:\Users\LAP11777-local\Documents\GitHub\backup2\master_2nd_semester\BusinessIntelligence\caidat\CoPhieu68Crawler\data\date\01-01-2016.csv
+  Bad File:     C:\Users\LAP11777-local\Documents\GitHub\backup2\master_2nd_semester\BusinessIntelligence\caidat\CoPhieu68Crawler\data\date\01-01-2016.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     200 rows, maximum of 50000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table "WORK_OWB"."LICHSUGIA", loaded from every logical record.
+Insert option in effect for this table: APPEND
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+"MACP"                                  1     *   ,  O(") CHARACTER            
+"NGAY"                               NEXT     *   ,  O(") DATE DD-MON-RR       
+"GIAMOCUA"                           NEXT     *   ,  O(") CHARACTER            
+"GIACAONHAT"                         NEXT     *   ,  O(") CHARACTER            
+"GIATHAPNHAT"                        NEXT     *   ,  O(") CHARACTER            
+"GIADONGCUA"                         NEXT     *   ,  O(") CHARACTER            
+"VOLUME"                             NEXT     *   ,  O(") CHARACTER            
+
+value used for ROWS parameter changed from 200 to 27
+Record 1: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "MACP".
+ORA-12899: value too large for column "WORK_OWB"."LICHSUGIA"."MACP" (actual: 8, maximum: 7)
+
+Record 2: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 3: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 4: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "MACP".
+ORA-12899: value too large for column "WORK_OWB"."LICHSUGIA"."MACP" (actual: 8, maximum: 7)
+
+Record 5: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 6: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 7: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "MACP".
+ORA-12899: value too large for column "WORK_OWB"."LICHSUGIA"."MACP" (actual: 8, maximum: 7)
+
+Record 8: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "MACP".
+ORA-12899: value too large for column "WORK_OWB"."LICHSUGIA"."MACP" (actual: 8, maximum: 7)
+
+Record 9: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 10: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 11: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 12: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 13: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 14: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 15: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 16: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 17: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 18: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 19: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+Record 20: Rejected - Error on table "WORK_OWB"."LICHSUGIA", column "NGAY".
+ORA-01861: literal does not match format string
+
+
+Table "WORK_OWB"."LICHSUGIA":
+  0 Rows successfully loaded.
+  20 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                  48762 bytes(27 rows)
+Read   buffer bytes:   65536
+
+Total logical records skipped:          0
+Total logical records read:            20
+Total logical records rejected:        20
+Total logical records discarded:        0
+
+Run began on Sun Jul 04 17:02:08 2021
+Run ended on Sun Jul 04 17:02:10 2021
+
+Elapsed time was:     00:00:02.20
+CPU time was:         00:00:00.04

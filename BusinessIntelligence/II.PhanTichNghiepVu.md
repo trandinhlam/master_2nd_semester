@@ -143,3 +143,7 @@ _____
       nhóm đầu tư mạo hiểm, an toàn, đầu cơ,...
     + Bước 2: Phân loại các nhóm cổ phiểu theo danh mục trên đã đưa ra
     + Bước 3: Đưa ra tư vấn về các loại cổ phiếu theo từng nhóm cho nhà đầu tư
+    
+
+
+>>>>>>> Stashed changes
