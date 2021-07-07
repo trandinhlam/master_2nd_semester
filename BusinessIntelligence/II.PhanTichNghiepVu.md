@@ -88,6 +88,7 @@ _____
 + #### Kết quả đầu ra:
     + Tương quan Chỉ số P/E, EPS,... thể hiện dưới dạng biểu đồ cột hoặc dòng ngang (Bar chart)
     + Tương quan tăng trưởng tổng thể sau các năm như ví dụ trên, thể hiện ở dạng bảng hoặc dạng Bar chart
+<<<<<<< Updated upstream
 + #### Mô tả chi tiết nghiệp vụ
     + Bước 1: thu thập kết quả quả trên
     + Bước 2: Sắp xếp các chỉ số theo nhóm để vẽ đồ thị biểu diễn
@@ -143,6 +144,7 @@ _____
       nhóm đầu tư mạo hiểm, an toàn, đầu cơ,...
     + Bước 2: Phân loại các nhóm cổ phiểu theo danh mục trên đã đưa ra
     + Bước 3: Đưa ra tư vấn về các loại cổ phiếu theo từng nhóm cho nhà đầu tư
+=======
     
 
 
