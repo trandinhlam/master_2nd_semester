@@ -41,3 +41,6 @@ ___
 + Pentaho Aggregate Designer: Là cộng cụ hỗ trợ cho Schema Workbench để tạo cube
 + Pentaho Data Intergration: là tool ETL như giới thiệu ở trên.
 + Pentaho Data Mining: Sử dụng WEKA để xử lý dữ liệu.
+
+
+![img.png](../images/img.png)

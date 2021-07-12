@@ -437,7 +437,7 @@
   <notepads>
   </notepads>
   <connection>
-    <name>mysqlql</name>
+    <name>mysql_pentaho_nds</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -494,12 +494,17 @@
   <order>
     <hop>
       <from>read_lichsugiatheongay</from>
-      <to>Table output</to>
+      <to>ignore 0 volume</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ignore 0 volume</from>
+      <to>Table lichsugia</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Table output</name>
+    <name>Table lichsugia</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -509,14 +514,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>mysqlql</connection>
+    <connection>mysql_pentaho_nds</connection>
     <schema>pentaho</schema>
     <table>nds_lichsugia</table>
     <commit>100</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
+    <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -527,6 +532,34 @@
     <return_keys>N</return_keys>
     <return_field/>
     <fields>
+      <field>
+        <column_name>Volume</column_name>
+        <stream_name>Volume</stream_name>
+      </field>
+      <field>
+        <column_name>MaCP</column_name>
+        <stream_name>Ticker</stream_name>
+      </field>
+      <field>
+        <column_name>Ngay</column_name>
+        <stream_name>DTYYYYMMDD</stream_name>
+      </field>
+      <field>
+        <column_name>GiaMoCua</column_name>
+        <stream_name>Open</stream_name>
+      </field>
+      <field>
+        <column_name>GiaCaoNhat</column_name>
+        <stream_name>High</stream_name>
+      </field>
+      <field>
+        <column_name>GiaThapNhat</column_name>
+        <stream_name>Low</stream_name>
+      </field>
+      <field>
+        <column_name>GiaDongCua</column_name>
+        <stream_name>Close</stream_name>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -537,7 +570,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>624</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
@@ -553,7 +586,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/tdlam/Documents/CaoHoc/HocKi2/master_2nd_semester/BusinessIntelligence/caidat/CoPhieu68Crawler/data/date/01-12-2020.csv</filename>
+    <filename>${env.data_folder}/date/${env.chosen_date_input}.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -656,6 +689,50 @@
     </remotesteps>
     <GUI>
       <xloc>192</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ignore 0 volume</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Table lichsugia</send_true_to>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>Volume</leftvalue>
+        <function>&gt;</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>Integer</type>
+          <text>0</text>
+          <length>-1</length>
+          <precision>0</precision>
+          <isnull>N</isnull>
+          <mask>####0;-####0</mask>
+        </value>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
