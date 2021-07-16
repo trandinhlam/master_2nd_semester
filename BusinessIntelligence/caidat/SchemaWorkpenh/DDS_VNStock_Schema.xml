@@ -1,0 +1,12 @@
+<Schema name="Schema">
+  <Cube name="MDB" visible="true" cache="true" enabled="true">
+    <Table name="Gia_Tri_Co_Phieu">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" highCardinality="false" name="ThoiGian">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+        <Table name="Table" alias="">
+        </Table>
+      </Hierarchy>
+    </Dimension>
+  </Cube>
+</Schema>

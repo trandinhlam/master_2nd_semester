@@ -42,5 +42,5 @@ ___
 + Pentaho Data Intergration: là tool ETL như giới thiệu ở trên.
 + Pentaho Data Mining: Sử dụng WEKA để xử lý dữ liệu.
 
-
++ https://help.pentaho.com/Documentation/8.0/Setup/Installation/Manual
 ![img.png](../images/img.png)
