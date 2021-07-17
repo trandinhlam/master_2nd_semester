@@ -16,7 +16,6 @@ https://www.youtube.com/watch?v=YDxA7WyhsvE&t=6s
 + addmin pass: oracle
 + pass manager: oracle
 
-<<<<<<< Updated upstream
 "QM@B-cZCu?+53.
 
 ____
@@ -27,7 +26,6 @@ __Ngày 07-07-2021__
 
 + computer password: Aa123456
 + oracle password: oracle
-=======
 ____
 
 # Data warehouse 11g windows
@@ -63,4 +61,3 @@ ____
     + Định nghĩa ETL procedures
 
 # Define Data source and target 
->>>>>>> Stashed changes
