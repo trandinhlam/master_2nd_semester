@@ -34,7 +34,7 @@ public class HttpUtils {
     public static String downloadCoPhieu68CSVFile(String url, String filePath) throws IOException {
         HttpClient client = new DefaultHttpClient();
         HttpGet httpget = new HttpGet(url);
-        httpget.setHeader("Cookie", "PHPSESSID=o98o1kk49snls5hdmuainiids1;cophieu68username=dHJhbnRoaWVuaG9hbmcxNEBnbWFpbC5jb20%3D;cophieu68password=ZDQwOGE5ZjQ2NjExZDhjMWEzMWE2OTEzZDkwY2U5Njc%3D");
+        httpget.setHeader("Cookie", "cp68screenwidth=1599; PHPSESSID=01c8mj8934lhpnvde6masmaeu1; _ga=GA1.2.1984893556.1621744974; cp68screenwidth=1599; cp68screenheight=798; _gid=GA1.2.17546607.1626572752; cophieu68username=dHJhbnRoaWVuaG9hbmcxNEBnbWFpbC5jb20%3D; cophieu68password=ZDQwOGE5ZjQ2NjExZDhjMWEzMWE2OTEzZDkwY2U5Njc%3D");
         HttpResponse response = client.execute(httpget);
         _saveFile(filePath, response);
         return filePath;

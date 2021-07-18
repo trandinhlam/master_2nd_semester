@@ -1,0 +1,14 @@
+<Schema name="New Schema1">
+  <Cube name="cube" visible="true" cache="true" enabled="true">
+    <Table name="nds_lichsugia" alias="lichsugia">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" name="cophieu">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" name="thoigian">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+      </Hierarchy>
+    </Dimension>
+  </Cube>
+</Schema>
