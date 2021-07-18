@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/18 09:02:01.132</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/18 09:38:22.420</modified_date>
+    <modified_date>2021/07/18 11:43:10.932</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
@@ -447,6 +447,18 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.characterEncoding</code>
+        <attribute>UTF-8</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useUnicode</code>
+        <attribute>true</attribute>
+      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -546,13 +558,33 @@
   </connection>
   <order>
     <hop>
-      <from>Table input</from>
+      <from>getAllStock</from>
       <to>SanLookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PhanNganhLookup</from>
+      <to>insert</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>insert</from>
+      <to>Update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SanLookup</from>
+      <to>NganhLookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NganhLookup</from>
+      <to>PhanNganhLookup</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Table input</name>
+    <name>getAllStock</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -775,45 +807,7 @@ FROM source_doanhnghiep.src_cophieu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert / update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DATABASE_NDS</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>pentaho</schema>
-      <table>nds_cophieu</table>
-      <key>
-        <name/>
-        <field>MaCP</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>880</xloc>
+      <xloc>144</xloc>
       <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
@@ -841,7 +835,7 @@ FROM source_doanhnghiep.src_cophieu
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>Exchange</name>
-        <field>MaSan</field>
+        <field>TenSan</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -861,44 +855,8 @@ FROM source_doanhnghiep.src_cophieu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>NganhLookup</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection/>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>lookup table</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>224</yloc>
+      <xloc>320</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -913,16 +871,28 @@ FROM source_doanhnghiep.src_cophieu
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
+    <connection>DATABASE_NDS</connection>
     <cache>N</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema/>
-      <table>lookup table</table>
+      <schema>pentaho</schema>
+      <table>nds_phannganh</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>IndustryName</name>
+        <field>Ten</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>MaPhanNganh</name>
+        <rename>MaPhanNganh</rename>
+        <default/>
+        <type>None</type>
+      </value>
     </lookup>
     <attributes/>
     <cluster_schema/>
@@ -933,12 +903,209 @@ FROM source_doanhnghiep.src_cophieu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
-      <yloc>224</yloc>
+      <xloc>672</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>insert</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>DATABASE_NDS</connection>
+    <schema>pentaho</schema>
+    <table>nds_cophieu</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>MaCP</column_name>
+        <stream_name>Code</stream_name>
+      </field>
+      <field>
+        <column_name>TenCongTy</column_name>
+        <stream_name>Name</stream_name>
+      </field>
+      <field>
+        <column_name>MaSan</column_name>
+        <stream_name>MaSan</stream_name>
+      </field>
+      <field>
+        <column_name>MaNganh</column_name>
+        <stream_name>MaNganh</stream_name>
+      </field>
+      <field>
+        <column_name>MaPhanNganh</column_name>
+        <stream_name>MaPhanNganh</stream_name>
+      </field>
+      <field>
+        <column_name>TongCPLuuHanh</column_name>
+        <stream_name>TotalShares</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Update</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>DATABASE_NDS</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>pentaho</schema>
+      <table>nds_cophieu</table>
+      <key>
+        <name>Code</name>
+        <field>MaCP</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>TongCPLuuHanh</name>
+        <rename>TotalShares</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>NganhLookup</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>DATABASE_NDS</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>pentaho</schema>
+      <table>nds_nganh</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>CatID</name>
+        <field>MaNganhSource</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>MaNganhSource</name>
+        <rename>MaNganh</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>SanLookup</source_step>
+      <target_step>San_Insert</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>PhanNganhLookup</source_step>
+      <target_step>PhanNganh_Insert</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>insert</source_step>
+      <target_step>Update</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

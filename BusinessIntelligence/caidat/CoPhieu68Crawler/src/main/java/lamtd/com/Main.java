@@ -17,9 +17,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
-        executeDownloadFromCoPhieu68Daily();
+//        executeDownloadFromCoPhieu68Daily();
 //        FetchStockInfoAll.main(args);
-//        _dumpStockToDB();
+        _dumpStockToDB();
     }
 
     private static void _dumpStockToDB() throws IOException, SQLException, ClassNotFoundException {
