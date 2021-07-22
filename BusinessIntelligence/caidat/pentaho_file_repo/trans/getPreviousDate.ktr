@@ -428,8 +428,8 @@
     <created_user>-</created_user>
     <created_date>2021/07/17 17:30:05.764</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/17 18:15:27.594</modified_date>
-    <key_for_session_key/>
+    <modified_date>2021/07/21 22:37:26.419</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -441,8 +441,8 @@
     <access>Native</access>
     <database>pentaho</database>
     <port>3306</port>
-    <username>root1</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce62d19dbb8b</password>
+    <username>${DATABASE_USERNAME}</username>
+    <password>${DATABASE_PASSWORD}</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -502,8 +502,8 @@
     </hop>
   </order>
   <step>
-    <name>getLastScandate</name>
-    <type>TableInput</type>
+    <name>Set variables</name>
+    <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -512,42 +512,15 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>nds_mysql</connection>
-    <sql>SELECT
-  value
-FROM pentaho.temp_setting where `key`=1
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>value</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>getLastScandate</origin>
-        <comments>value</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
+    <fields>
+      <field>
+        <field_name>currentDate</field_name>
+        <variable_name>CHOSEN_DATE</variable_name>
+        <variable_type>ROOT_JOB</variable_type>
+        <default_value/>
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -557,7 +530,7 @@ FROM pentaho.temp_setting where `key`=1
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
+      <xloc>592</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
@@ -625,8 +598,8 @@ currentDate = dd+'-'+mm+'-'+yyyy;
     </GUI>
   </step>
   <step>
-    <name>Set variables</name>
-    <type>SetVariable</type>
+    <name>getLastScandate</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -635,15 +608,42 @@ currentDate = dd+'-'+mm+'-'+yyyy;
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <field_name>currentDate</field_name>
-        <variable_name>CHOSEN_DATE</variable_name>
-        <variable_type>ROOT_JOB</variable_type>
-        <default_value/>
-      </field>
-    </fields>
-    <use_formatting>Y</use_formatting>
+    <connection>nds_mysql</connection>
+    <sql>SELECT
+  value
+FROM pentaho.temp_setting where `key`=1
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>value</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>getLastScandate</origin>
+        <comments>value</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -653,7 +653,7 @@ currentDate = dd+'-'+mm+'-'+yyyy;
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
+      <xloc>192</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>

@@ -18,7 +18,7 @@
 --
 -- Table structure for table `src_cophieu`
 --
-
+USE source_doanhnghiep
 DROP TABLE IF EXISTS `src_cophieu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
