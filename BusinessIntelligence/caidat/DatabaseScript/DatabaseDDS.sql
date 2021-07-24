@@ -15,317 +15,320 @@ CREATE DATABASE "StockDatabaseDDS"
 BEGIN;
 -- Table: public.ThoiGian-GiaTriCoPhieu
 
-DROP TABLE IF EXISTS public."ThoiGian-GiaTriCoPhieu" CASCADE;
+DROP TABLE IF EXISTS public."thoigian-giatricophieu" CASCADE;
 
-CREATE TABLE public."ThoiGian-GiaTriCoPhieu"
+CREATE TABLE public."thoigian-giatricophieu"
 (
-    "id" serial NOT NULL UNIQUE NOT NULL,
-    "Ngay" bigint NOT NULL,
-    "Thang" bigint NOT NULL,
-    "Nam" bigint NOT NULL,
-    CONSTRAINT "ThoiGian-GiaTriCoPhieu_pkey" PRIMARY KEY ("id")
+    "date" serial NOT NULL UNIQUE NOT NULL,
+    "ngay" bigint NOT NULL,
+    "thang" bigint NOT NULL,
+    "nam" bigint NOT NULL,
+    CONSTRAINT "ThoiGian-GiaTriCoPhieu_pkey" PRIMARY KEY ("date")
 );
 
 
-ALTER TABLE public."ThoiGian-GiaTriCoPhieu"
+ALTER TABLE public."thoigian-giatricophieu"
     OWNER to postgres;
 
-COMMENT ON TABLE public."ThoiGian-GiaTriCoPhieu"
+COMMENT ON TABLE public."thoigian-giatricophieu"
     IS 'Bang Chieu Thoi Gian Cua Co Phieu';
 
 -- Table: public.SanGiaoDich
 
-DROP TABLE IF EXISTS public."SanGiaoDich" CASCADE;
+DROP TABLE IF EXISTS public."sangiaodich" CASCADE;
 
-CREATE TABLE public."SanGiaoDich"
+CREATE TABLE public."sangiaodich"
 (
     "id" serial NOT NULL,
-    "MaSan" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "TruSo" text COLLATE pg_catalog."default",
-    "DiaChi" text COLLATE pg_catalog."default",
+    "ma-san" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ten-san" text COLLATE pg_catalog."default",
+    "ten-day-du" text COLLATE pg_catalog."default",
+    "tru-so" text COLLATE pg_catalog."default",
+    "dia-chi" text COLLATE pg_catalog."default",
     CONSTRAINT "SanGiaoDich_pkey" PRIMARY KEY ("id")
 );
 
 
-ALTER TABLE public."SanGiaoDich"
+ALTER TABLE public."sangiaodich"
     OWNER to postgres;
 
-COMMENT ON TABLE public."SanGiaoDich"
+COMMENT ON TABLE public."sangiaodich"
     IS 'Bang Chieu San Giao Dich';
 
 -- Table: public.CongTyPhatHanh
 
-DROP TABLE IF EXISTS public."CongTyPhatHanh" CASCADE;
+DROP TABLE IF EXISTS public."congtyphathanh" CASCADE;
 
-CREATE TABLE public."CongTyPhatHanh"
+CREATE TABLE public."congtyphathanh"
 (
-    "id" serial NOT NULL,
-    "MaCongTy" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "TenCongTy" text COLLATE pg_catalog."default",
-    "VonDieuLe" bigint,
-    CONSTRAINT "CongTyPhatHanh_pkey" PRIMARY KEY ("id")
+    "ma-cong-ty" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ten-cong-ty" text COLLATE pg_catalog."default",
+    "von-dieu-le" bigint,
+    CONSTRAINT "CongTyPhatHanh_pkey" PRIMARY KEY ("ma-cong-ty")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."CongTyPhatHanh"
+ALTER TABLE public."congtyphathanh"
     OWNER to postgres;
 
-COMMENT ON TABLE public."CongTyPhatHanh"
+COMMENT ON TABLE public."congtyphathanh"
     IS 'Bang Chieu Cong ty phat hanh co phieu';
 
     -- Table: public.CoPhieu
 
-DROP TABLE IF EXISTS public."CoPhieu" CASCADE;
+DROP TABLE IF EXISTS public."cophieu" CASCADE;
 
-CREATE TABLE public."CoPhieu"
+CREATE TABLE public."cophieu"
 (
-    "id" serial NOT NULL,
-    "MaCoPhieu" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "TenCoPhieu" text COLLATE pg_catalog."default",
-    "PhanLoaiGiaTri" text COLLATE pg_catalog."default",
-    "LinhVuc" text COLLATE pg_catalog."default",
-    CONSTRAINT "CoPhieu_pkey" PRIMARY KEY ("id")
+    "ma-co-phieu" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ten-cong-ty" text COLLATE pg_catalog."default",
+    "tong-co-phieu-luu-hanh" bigint,
+    "phan-loai-gia-tri" text COLLATE pg_catalog."default",
+    "linh-vuc" text COLLATE pg_catalog."default",
+    "ma-san" text COLLATE pg_catalog."default",
+    CONSTRAINT "CoPhieu_pkey" PRIMARY KEY ("ma-co-phieu")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."CoPhieu"
+ALTER TABLE public."cophieu"
     OWNER to postgres;
 
-COMMENT ON TABLE public."CoPhieu"
+COMMENT ON TABLE public."cophieu"
     IS 'Bang Chieu Co Phieu';
 
 -- Table: public.RoomLinhVuc
 
-DROP TABLE IF EXISTS public."RoomLinhVuc" CASCADE;
+DROP TABLE IF EXISTS public."roomlinhvuc" CASCADE;
 
-CREATE TABLE public."RoomLinhVuc"
+CREATE TABLE public."roomlinhvuc"
 (
-    "id" serial NOT NULL,
-    "MaLinhVuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "TiLeSoHuuToiDa" double precision,
-    CONSTRAINT "RoomLinhVuc_pkey" PRIMARY KEY ("id")
+    "ma-linh-vuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ti-le-so-huu-toi-da" double precision,
+    CONSTRAINT "RoomLinhVuc_pkey" PRIMARY KEY ("ma-linh-vuc")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."RoomLinhVuc"
+ALTER TABLE public."roomlinhvuc"
     OWNER to postgres;
 
-COMMENT ON TABLE public."RoomLinhVuc"
+COMMENT ON TABLE public."roomlinhvuc"
     IS 'Bang chieu cho room linh vuc cua nha dau tu khoi ngoai';
 
 -- Table: public.PhapNhanGiaoDich
 
-DROP TABLE IF EXISTS public."PhapNhanGiaoDich" CASCADE;
+DROP TABLE IF EXISTS public."phapnhangiaodich" CASCADE;
 
-CREATE TABLE public."PhapNhanGiaoDich"
+CREATE TABLE public."phapnhangiaodich"
 (
-    "id" serial NOT NULL,
-    "MaToChuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "TenToChuc" text COLLATE pg_catalog."default" NOT NULL,
-    "LoaiToChuc" text COLLATE pg_catalog."default" NOT NULL,
-    "MaLinhVuc" text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "PhapNhanGiaoDich_pkey" PRIMARY KEY ("id")
+    "ma-to-chuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ten-to-chuc" text COLLATE pg_catalog."default" NOT NULL,
+    "loai-to-chuc" text COLLATE pg_catalog."default" NOT NULL,
+    "ma-linh-vuc" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "PhapNhanGiaoDich_pkey" PRIMARY KEY ("ma-to-chuc")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."PhapNhanGiaoDich"
-    ADD CONSTRAINT "FK_MaLinhVuc" FOREIGN KEY ("MaLinhVuc")
-    REFERENCES public."RoomLinhVuc" ("MaLinhVuc")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."phapnhangiaodich"
+--     ADD CONSTRAINT "FK_MaLinhVuc" FOREIGN KEY ("ma-linh-vuc")
+--     REFERENCES public."roomlinhvuc" ("ma-linh-vuc")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."PhapNhanGiaoDich"
+ALTER TABLE public."phapnhangiaodich"
     OWNER to postgres;
 
-COMMENT ON TABLE public."PhapNhanGiaoDich"
+COMMENT ON TABLE public."phapnhangiaodich"
     IS 'Bang Chieu cac tac nhan thuc hien giao dich';
 
 -- Table: public.ThoiGian-BaoCaoTaiChinh
 
-DROP TABLE IF EXISTS public."ThoiGian-BaoCaoTaiChinh" CASCADE;
+DROP TABLE IF EXISTS public."thoigian-baocaotaichinh" CASCADE;
 
-CREATE TABLE public."ThoiGian-BaoCaoTaiChinh"
+CREATE TABLE public."thoigian-baocaotaichinh"
 (
-    "id" serial NOT NULL,
-    "Quy" bigint NOT NULL,
-    "Nam" bigint NOT NULL,
-    CONSTRAINT "ThoiGian-BaoCaoTaiChinh_pkey" PRIMARY KEY ("id")
+    "date" date NOT NULL,
+    "quy" bigint NOT NULL,
+    "nam" bigint NOT NULL,
+    CONSTRAINT "ThoiGian-BaoCaoTaiChinh_pkey" PRIMARY KEY ("date")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."ThoiGian-BaoCaoTaiChinh"
+ALTER TABLE public."thoigian-baocaotaichinh"
     OWNER to postgres;
 
-COMMENT ON TABLE public."ThoiGian-BaoCaoTaiChinh"
+COMMENT ON TABLE public."thoigian-baocaotaichinh"
     IS 'Bang Chieu cua thoi gian bao cao tai chinh';
 
 -- Table: public.ThoiGian-GiaoDichCoPhieuDacBiet
 
-DROP TABLE IF EXISTS public."ThoiGian-GiaoDichCoPhieuDacBiet" CASCADE;
+DROP TABLE IF EXISTS public."thoigian-giaodichcophieudacbiet" CASCADE;
 
-CREATE TABLE public."ThoiGian-GiaoDichCoPhieuDacBiet"
+CREATE TABLE public."thoigian-giaodichcophieudacbiet"
 (
-    "id" serial NOT NULL,
-    "Ngay" bigint NOT NULL,
-    "Thang" bigint NOT NULL,
-    "Nam" bigint NOT NULL,
-    "Quy" bigint NOT NULL,
-    CONSTRAINT "ThoiGian-GiaoDichCoPhieuDacBiet_pkey" PRIMARY KEY ("id")
+    "date" date NOT NULL,
+    "ngay" bigint NOT NULL,
+    "thang" bigint NOT NULL,
+    "nam" bigint NOT NULL,
+    "quy" bigint NOT NULL,
+    CONSTRAINT "ThoiGian-GiaoDichCoPhieuDacBiet_pkey" PRIMARY KEY ("date")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."ThoiGian-GiaoDichCoPhieuDacBiet"
+ALTER TABLE public."thoigian-giaodichcophieudacbiet"
     OWNER to postgres;
 
-COMMENT ON TABLE public."ThoiGian-GiaoDichCoPhieuDacBiet"
+COMMENT ON TABLE public."thoigian-giaodichcophieudacbiet"
     IS 'Bang Chieu cua thoi gian giao dich co phieu dac biet';
 
 
 -- Table: public.GiaTriCoPhieu
 
-DROP TABLE IF EXISTS public."GiaTriCoPhieu" CASCADE;
+DROP TABLE IF EXISTS public."giatricophieu" CASCADE;
 
-CREATE TABLE public."GiaTriCoPhieu"
+CREATE TABLE public."giatricophieu"
 (
     "id" serial NOT NULL,
-    "MaCoPhieu" text COLLATE pg_catalog."default" NOT NULL,
-    "MaCongTyPhatHanh" text COLLATE pg_catalog."default" NOT NULL,
-    "SanGiaoDich" text COLLATE pg_catalog."default" NOT NULL,
-    "NgayGiaoDich" bigint NOT NULL,
-    "GiaMoCua" bigint NOT NULL,
-    "GiaDongCua" bigint NOT NULL,
-    "SoLuongCoPhieu" bigint NOT NULL,
-    "PB" double precision NOT NULL,
-    "PE" double precision NOT NULL,
-    "HeSoThanhKhoan" double precision NOT NULL,
+    "ma-co-phieu" text COLLATE pg_catalog."default",
+    "ma-cong-ty-phat-hanh" text COLLATE pg_catalog."default",
+    "san-gia-dich" text COLLATE pg_catalog."default",
+    "ngay" date,
+    "gia-mo-cua" double precision,
+    "gia-dong-cua" double precision,
+    "gia-cao-nhat" double precision,
+    "gia-thap-nhat" double precision,
+    "so-luong-co-phieu" bigint,
+    "pb" double precision,
+    "pe" double precision,
+    "he-so-thanh-khoan" double precision,
+    "volume" double precision,
     CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("id")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."GiaTriCoPhieu"
-    ADD CONSTRAINT "FK_ThoiGian" FOREIGN KEY ("NgayGiaoDich")
-    REFERENCES public."ThoiGian-GiaTriCoPhieu" ("id")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giatricophieu"
+--     ADD CONSTRAINT "FK_ThoiGian" FOREIGN KEY ("ngay")
+--     REFERENCES public."thoigian-giatricophieu" ("date")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaTriCoPhieu"
-    ADD CONSTRAINT "FK_SanGiaoDich" FOREIGN KEY ("SanGiaoDich")
-    REFERENCES public."SanGiaoDich" ("MaSan")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giatricophieu"
+--     ADD CONSTRAINT "FK_SanGiaoDich" FOREIGN KEY ("san-gia-dich")
+--     REFERENCES public."sangiaodich" ("ma-san")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaTriCoPhieu"
-    ADD CONSTRAINT "FK_CongTyPhatHanh" FOREIGN KEY ("MaCongTyPhatHanh")
-    REFERENCES public."CongTyPhatHanh" ("MaCongTy")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giatricophieu"
+--     ADD CONSTRAINT "FK_CongTyPhatHanh" FOREIGN KEY ("ma-cong-ty-phat-hanh")
+--     REFERENCES public."congtyphathanh" ("ma-cong-ty")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaTriCoPhieu"
-    ADD CONSTRAINT "FK_CoPhieu" FOREIGN KEY ("MaCoPhieu")
-    REFERENCES public."CoPhieu" ("MaCoPhieu")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giatricophieu"
+--     ADD CONSTRAINT "FK_CoPhieu" FOREIGN KEY ("ma-co-phieu")
+--     REFERENCES public."cophieu" ("ma-co-phieu")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaTriCoPhieu"
+ALTER TABLE public."giatricophieu"
     OWNER to postgres;
 
-COMMENT ON TABLE public."GiaTriCoPhieu"
+COMMENT ON TABLE public."giatricophieu"
     IS 'Bang Fact Gia tri co phieu';
 
 -- Table: public.BaoCaoTaiChinhCongTy
 
-DROP TABLE IF EXISTS public."BaoCaoTaiChinhCongTy" CASCADE;
+DROP TABLE IF EXISTS public."baocaotaichinhcongty" CASCADE;
 
-CREATE TABLE public."BaoCaoTaiChinhCongTy"
+CREATE TABLE public."baocaotaichinhcongty"
 (
     "id" serial NOT NULL,
-    "MaBaoCao" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "ThoiDiemBaoCao" bigint NOT NULL,
-    "CongTyPhatHanh" text COLLATE pg_catalog."default" NOT NULL,
-    "ChiPhiHoatDong" bigint NOT NULL,
-    "DoanhThu" bigint NOT NULL,
-    "LoiNhuan" bigint NOT NULL,
-    "VonHoa" bigint NOT NULL,
-    "EPS" double precision NOT NULL,
-    "ROE" double precision NOT NULL,
-    "ROA" double precision NOT NULL,
+    "ma-bao-cao" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "thoi-diem-bao-cao" date NOT NULL,
+    "cong-ty-phat-hanh" text COLLATE pg_catalog."default" NOT NULL,
+    "chi-phi-hoat-dong" bigint NOT NULL,
+    "doanh-thu" bigint NOT NULL,
+    "loi-nhuan" bigint NOT NULL,
+    "von-hoa" bigint NOT NULL,
+    "eps" double precision NOT NULL,
+    "roe" double precision NOT NULL,
+    "roa" double precision NOT NULL,
     CONSTRAINT "BaoCaoTaiChinhCongTy_pkey" PRIMARY KEY ("id")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."BaoCaoTaiChinhCongTy"
-    ADD CONSTRAINT "FK_CongTyPhatHanh" FOREIGN KEY ("CongTyPhatHanh")
-    REFERENCES public."CongTyPhatHanh" ("MaCongTy")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."baocaotaichinhcongty"
+--     ADD CONSTRAINT "FK_CongTyPhatHanh" FOREIGN KEY ("cong-ty-phat-hanh")
+--     REFERENCES public."congtyphathanh" ("ma-cong-ty")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."BaoCaoTaiChinhCongTy"
-    ADD CONSTRAINT "FK_ThoiGian" FOREIGN KEY ("ThoiDiemBaoCao")
-    REFERENCES public."ThoiGian-BaoCaoTaiChinh" (id)
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."baocaotaichinhcongty"
+--     ADD CONSTRAINT "FK_ThoiGian" FOREIGN KEY ("thoi-diem-bao-cao")
+--     REFERENCES public."thoigian-baocaotaichinh" ("date")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."BaoCaoTaiChinhCongTy"
+ALTER TABLE public."baocaotaichinhcongty"
     OWNER to postgres;
 
-COMMENT ON TABLE public."BaoCaoTaiChinhCongTy"
+COMMENT ON TABLE public."baocaotaichinhcongty"
     IS 'Bang Fact Bao cao tai chinh cong ty';
 
 -- Table: public.GiaoDichCoPhieuDacBiet
 
-DROP TABLE IF EXISTS public."GiaoDichCoPhieuDacBiet" CASCADE;
+DROP TABLE IF EXISTS public."giaodichcophieudacbiet" CASCADE;
 
-CREATE TABLE public."GiaoDichCoPhieuDacBiet"
+CREATE TABLE public."giaodichcophieudacbiet"
 (
-    id bigint NOT NULL,
-    "MaCoPhieu" text COLLATE pg_catalog."default" NOT NULL,
-    "ThoiGianGiaoDich" bigint NOT NULL,
-    "SoLuong" bigint NOT NULL,
-    "PhapNhanGiaoDich" text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "GiaoDichCoPhieuDacBiet_pkey" PRIMARY KEY (id)
+    "id" serial NOT NULL,
+    "ma-co-phieu" text COLLATE pg_catalog."default" NOT NULL,
+    "thoi-gian-giao-dich" date NOT NULL,
+    "so-luong" bigint NOT NULL,
+    "phap-nhan-giao-dich" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "GiaoDichCoPhieuDacBiet_pkey" PRIMARY KEY ("id")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."GiaoDichCoPhieuDacBiet"
-    ADD CONSTRAINT "FK_PhapNhanGiaoDich" FOREIGN KEY ("PhapNhanGiaoDich")
-    REFERENCES public."PhapNhanGiaoDich" ("MaToChuc")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giaodichcophieudacbiet"
+--     ADD CONSTRAINT "FK_PhapNhanGiaoDich" FOREIGN KEY ("phap-nhan-giao-dich")
+--     REFERENCES public."phapnhangiaodich" ("ma-to-chuc")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaoDichCoPhieuDacBiet"
-    ADD CONSTRAINT "FK_ThoiGianGiaoDich" FOREIGN KEY ("ThoiGianGiaoDich")
-    REFERENCES public."ThoiGian-GiaoDichCoPhieuDacBiet" (id)
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giaodichcophieudacbiet"
+--     ADD CONSTRAINT "FK_ThoiGianGiaoDich" FOREIGN KEY ("thoi-gian-giao-dich")
+--     REFERENCES public."thoigian-giaodichcophieudacbiet" ("date")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaoDichCoPhieuDacBiet"
-    ADD CONSTRAINT "FK_MaCoPhieu" FOREIGN KEY ("MaCoPhieu")
-    REFERENCES public."CoPhieu" ("MaCoPhieu")
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-    NOT VALID;
+-- ALTER TABLE public."giaodichcophieudacbiet"
+--     ADD CONSTRAINT "FK_MaCoPhieu" FOREIGN KEY ("ma-co-phieu")
+--     REFERENCES public."cophieu" ("ma-co-phieu")
+--     ON UPDATE NO ACTION
+--     ON DELETE NO ACTION
+--     NOT VALID;
 
-ALTER TABLE public."GiaoDichCoPhieuDacBiet"
+ALTER TABLE public."giaodichcophieudacbiet"
     OWNER to postgres;
 
-COMMENT ON TABLE public."GiaoDichCoPhieuDacBiet"
+COMMENT ON TABLE public."giaodichcophieudacbiet"
     IS 'Bang Fact Giao dich co phieu dac biet';
 COMMIT;
