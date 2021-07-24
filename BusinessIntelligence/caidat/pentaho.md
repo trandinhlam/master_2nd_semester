@@ -44,3 +44,9 @@ ___
 
 + https://help.pentaho.com/Documentation/8.0/Setup/Installation/Manual
 ![img.png](../images/img.png)
+  
+
+  ______
+16h10 24/07/2021
++ Link DashBoard nháp: http://localhost:8080/pentaho/api/repos/:home:admin:dash.wcdf/edit
++ Link DashBoard biến động giá: http://localhost:8080/pentaho/api/repos/:home:admin:StockDashBoard.wcdf/edit
