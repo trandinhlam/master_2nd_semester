@@ -1,0 +1,3 @@
+with member [Measures].[Name] as '[CoPhieu].CurrentMember.UniqueName' select TopCount( filter({Descendants([CoPhieu] ,[CoPhieu].[TenCoPhieu])}, not isempty(([CoPhieu].CurrentMember)) ) , 50) on ROWS, 
+ {[Measures].[Name]} on Columns 
+ from [GiaCoPhieu]
