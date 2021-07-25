@@ -207,12 +207,14 @@ CREATE TABLE public."giatricophieu"
     "gia-cao-nhat" double precision,
     "gia-thap-nhat" double precision,
     "so-luong-co-phieu" bigint,
-    "pb" double precision,
-    "pe" double precision,
     "he-so-thanh-khoan" double precision,
     "volume" double precision,
     CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("id")
 )
+
+--Table: public.ChiSo
+--DROP TABLE IF EXISTS public."chiso" CASCADE;
+
 
 TABLESPACE pg_default;
 
