@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS public."thoigian-giatricophieu" CASCADE;
 
 CREATE TABLE public."thoigian-giatricophieu"
 (
-    "date" serial NOT NULL UNIQUE NOT NULL,
+    "date" date NOT NULL UNIQUE NOT NULL,
     "ngay" bigint NOT NULL,
     "thang" bigint NOT NULL,
     "nam" bigint NOT NULL,
@@ -64,6 +64,9 @@ CREATE TABLE public."congtyphathanh"
     "ma-cong-ty" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
     "ten-cong-ty" text COLLATE pg_catalog."default",
     "von-dieu-le" bigint,
+    "tong-co-phieu-phat-hanh" bigint,
+    "ma-nganh" bigint,
+    "ma-phan-nganh" bigint,
     CONSTRAINT "CongTyPhatHanh_pkey" PRIMARY KEY ("ma-cong-ty")
 )
 
@@ -197,7 +200,7 @@ CREATE TABLE public."giatricophieu"
     "id" serial NOT NULL,
     "ma-co-phieu" text COLLATE pg_catalog."default",
     "ma-cong-ty-phat-hanh" text COLLATE pg_catalog."default",
-    "san-gia-dich" text COLLATE pg_catalog."default",
+    "san-giao-dich" text COLLATE pg_catalog."default",
     "ngay" date,
     "gia-mo-cua" double precision,
     "gia-dong-cua" double precision,
