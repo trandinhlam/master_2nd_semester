@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/24 15:12:51.643</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/25 21:42:18.509</modified_date>
+    <modified_date>2021/07/26 14:46:06.662</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -882,8 +882,8 @@ FROM pentaho.nds_cophieu
 , GiaCaoNhat
 , GiaThapNhat
 , GiaDongCua
+, MaNgay
 FROM pentaho.nds_lichsugia
-
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -1053,6 +1053,29 @@ FROM pentaho.nds_lichsugia
         <date_format_timezone>Asia/Bangkok</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>MaNgay</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>LichSugia input</origin>
+        <comments>MaNgay</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -1086,7 +1109,7 @@ FROM pentaho.nds_lichsugia
       <key>ma-co-phieu</key>
     </keys_1>
     <keys_2>
-      <key>ma-co-phieu</key>
+      <key>MaCP</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -1191,32 +1214,36 @@ FROM pentaho.nds_lichsugia
         <rename/>
       </field>
       <field>
-        <name>ma-co-phieu_1</name>
+        <name>MaCP</name>
         <rename/>
       </field>
       <field>
-        <name>ngay</name>
-        <rename/>
+        <name>Ngay</name>
+        <rename>ngay</rename>
       </field>
       <field>
-        <name>volume</name>
-        <rename/>
+        <name>Volume</name>
+        <rename>volume</rename>
       </field>
       <field>
-        <name>gia-mo-cua</name>
-        <rename/>
+        <name>GiaMoCua</name>
+        <rename>gia-mo-cua</rename>
       </field>
       <field>
-        <name>gia-cao-nhat</name>
-        <rename/>
+        <name>GiaCaoNhat</name>
+        <rename>gia-cao-nhat</rename>
       </field>
       <field>
-        <name>gia-thap-nhat</name>
-        <rename/>
+        <name>GiaThapNhat</name>
+        <rename>gia-thap-nhat</rename>
       </field>
       <field>
-        <name>gia-dong-cua</name>
-        <rename/>
+        <name>GiaDongCua</name>
+        <rename>gia-dong-cua</rename>
+      </field>
+      <field>
+        <name>MaNgay</name>
+        <rename>ma-ngay</rename>
       </field>
       <select_unspecified>N</select_unspecified>
       <remove>
@@ -1232,7 +1259,7 @@ FROM pentaho.nds_lichsugia
         <name>ma-phan-nganh</name>
       </remove>
       <remove>
-        <name>ma-co-phieu_1</name>
+        <name>MaCP</name>
       </remove>
     </fields>
     <attributes/>
@@ -1263,31 +1290,35 @@ FROM pentaho.nds_lichsugia
     <fields>
       <field>
         <name>MaCP</name>
-        <rename>ma-co-phieu</rename>
+        <rename/>
       </field>
       <field>
         <name>Ngay</name>
-        <rename>ngay</rename>
+        <rename/>
       </field>
       <field>
         <name>Volume</name>
-        <rename>volume</rename>
+        <rename/>
       </field>
       <field>
         <name>GiaMoCua</name>
-        <rename>gia-mo-cua</rename>
+        <rename/>
       </field>
       <field>
         <name>GiaCaoNhat</name>
-        <rename>gia-cao-nhat</rename>
+        <rename/>
       </field>
       <field>
         <name>GiaThapNhat</name>
-        <rename>gia-thap-nhat</rename>
+        <rename/>
       </field>
       <field>
         <name>GiaDongCua</name>
-        <rename>gia-dong-cua</rename>
+        <rename/>
+      </field>
+      <field>
+        <name>MaNgay</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1300,7 +1331,7 @@ FROM pentaho.nds_lichsugia
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
+      <xloc>304</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1407,7 +1438,7 @@ FROM pentaho.nds_lichsugia
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>ma-co-phieu</name>
+        <name>MaCP</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1415,7 +1446,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>ngay</name>
+        <name>Ngay</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1423,7 +1454,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>volume</name>
+        <name>Volume</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1431,7 +1462,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>gia-mo-cua</name>
+        <name>GiaMoCua</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1439,7 +1470,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>gia-cao-nhat</name>
+        <name>GiaCaoNhat</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1447,7 +1478,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>gia-thap-nhat</name>
+        <name>GiaThapNhat</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1455,7 +1486,7 @@ FROM pentaho.nds_lichsugia
         <presorted>N</presorted>
       </field>
       <field>
-        <name>gia-dong-cua</name>
+        <name>GiaDongCua</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>

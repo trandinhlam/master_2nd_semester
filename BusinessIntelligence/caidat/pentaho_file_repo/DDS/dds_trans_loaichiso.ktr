@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>dds_trans_ngay-giatricp</name>
+    <name>dds_trans_loaichiso</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -426,16 +426,67 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/07/25 10:45:05.752</created_date>
+    <created_date>2021/07/27 16:41:50.083</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/26 17:09:32.134</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2021/07/27 17:31:31.646</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>dds_input_LichSuGia</name>
+    <name>dds_connection</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>StockDatabaseDDS</database>
+    <port>5432</port>
+    <username>${DATABASE _DDS_USERNAME}</username>
+    <password>${DATABASE_DDS_PASSWORD}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>nds_connection</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -489,91 +540,20 @@
       </attribute>
     </attributes>
   </connection>
-  <connection>
-    <name>dds_Ngay-LichSuGia_output</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>StockDatabaseDDS</database>
-    <port>5432</port>
-    <username>${DATABASE _DDS_USERNAME}</username>
-    <password>${DATABASE_DDS_PASSWORD}</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <order>
     <hop>
-      <from>LichSuGia input</from>
-      <to>Select Ngay</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select Ngay</from>
-      <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows</from>
-      <to>Group by</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Group by</from>
-      <to>Calculator</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Calculator</from>
+      <from>Table input</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values</from>
-      <to>ThoiGian-LichsuGia output</to>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>LichSuGia input</name>
+    <name>Table input</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -583,11 +563,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dds_input_LichSuGia</connection>
+    <connection>nds_connection</connection>
     <sql>SELECT
-Ngay
-, MaNgay
-FROM pentaho.nds_lichsugia
+  MaLoaiChiSo
+, TenLoaiChiSo
+FROM pentaho.nds_loaichiso
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -597,14 +577,14 @@ FROM pentaho.nds_lichsugia
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>Timestamp</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>Ngay</name>
-        <length>0</length>
-        <precision>-1</precision>
-        <origin>LichSuGia input</origin>
-        <comments>Ngay</comments>
-        <conversion_Mask/>
+        <name>MaLoaiChiSo</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>MaLoaiChiSo</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -620,14 +600,14 @@ FROM pentaho.nds_lichsugia
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>MaNgay</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>LichSuGia input</origin>
-        <comments>MaNgay</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <name>TenLoaiChiSo</name>
+        <length>21845</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>TenLoaiChiSo</comments>
+        <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -653,12 +633,12 @@ FROM pentaho.nds_lichsugia
     </remotesteps>
     <GUI>
       <xloc>224</xloc>
-      <yloc>336</yloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select Ngay</name>
+    <name>Select values</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -670,12 +650,12 @@ FROM pentaho.nds_lichsugia
     </partitioning>
     <fields>
       <field>
-        <name>Ngay</name>
-        <rename/>
+        <name>MaLoaiChiSo</name>
+        <rename>ma-chi-so</rename>
       </field>
       <field>
-        <name>MaNgay</name>
-        <rename/>
+        <name>TenLoaiChiSo</name>
+        <rename>ten-chi-so</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -688,13 +668,13 @@ FROM pentaho.nds_lichsugia
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>336</yloc>
+      <xloc>624</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>ThoiGian-LichsuGia output</name>
+    <name>Table output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -704,9 +684,9 @@ FROM pentaho.nds_lichsugia
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dds_Ngay-LichSuGia_output</connection>
+    <connection>dds_connection</connection>
     <schema>public</schema>
-    <table>thoigian-giatricophieu</table>
+    <table>loaichiso</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -732,252 +712,8 @@ FROM pentaho.nds_lichsugia
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1344</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>MaNgay</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>Ngay</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>MaNgay</name>
-      </field>
-      <field>
-        <name>Ngay</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>MaNgay</aggregate>
-        <subject>MaNgay</subject>
-        <type>FIRST_INCL_NULL</type>
-        <valuefield/>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>day</field_name>
-      <calc_type>DAY_OF_MONTH</calc_type>
-      <field_a>Ngay</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>month</field_name>
-      <calc_type>MONTH_OF_DATE</calc_type>
-      <field_a>Ngay</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>year</field_name>
-      <calc_type>YEAR_OF_DATE</calc_type>
-      <field_a>Ngay</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>week</field_name>
-      <calc_type>WEEK_OF_YEAR</calc_type>
-      <field_a>Ngay</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>944</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>MaNgay</name>
-        <rename>ma-ngay</rename>
-      </field>
-      <field>
-        <name>Ngay</name>
-        <rename>date</rename>
-      </field>
-      <field>
-        <name>MaNgay_1</name>
-        <rename/>
-      </field>
-      <field>
-        <name>day</name>
-        <rename>ngay</rename>
-      </field>
-      <field>
-        <name>month</name>
-        <rename>thang</rename>
-      </field>
-      <field>
-        <name>year</name>
-        <rename>nam</rename>
-      </field>
-      <field>
-        <name>week</name>
-        <rename>tuan</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <remove>
-        <name>MaNgay_1</name>
-      </remove>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1120</xloc>
-      <yloc>336</yloc>
+      <xloc>1056</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

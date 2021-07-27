@@ -19,11 +19,13 @@ DROP TABLE IF EXISTS public."thoigian-giatricophieu" CASCADE;
 
 CREATE TABLE public."thoigian-giatricophieu"
 (
+    "ma-ngay" bigint UNIQUE NOT NULL,
     "date" date NOT NULL UNIQUE NOT NULL,
     "ngay" bigint NOT NULL,
     "thang" bigint NOT NULL,
     "nam" bigint NOT NULL,
-    CONSTRAINT "ThoiGian-GiaTriCoPhieu_pkey" PRIMARY KEY ("date")
+    "tuan" bigint NOT NULL,
+    CONSTRAINT "ThoiGian-GiaTriCoPhieu_pkey" PRIMARY KEY ("ma-ngay")
 );
 
 
@@ -101,36 +103,36 @@ ALTER TABLE public."cophieu"
 COMMENT ON TABLE public."cophieu"
     IS 'Bang Chieu Co Phieu';
 
--- Table: public.RoomLinhVuc
+-- Table: public.nganhkinhdoanh
 
-DROP TABLE IF EXISTS public."roomlinhvuc" CASCADE;
+DROP TABLE IF EXISTS public."nganhkinhdoanh" CASCADE;
 
-CREATE TABLE public."roomlinhvuc"
+CREATE TABLE public."nganhkinhdoanh"
 (
-    "ma-linh-vuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "ti-le-so-huu-toi-da" double precision,
-    CONSTRAINT "RoomLinhVuc_pkey" PRIMARY KEY ("ma-linh-vuc")
+    "ma-nganh" bigint UNIQUE NOT NULL,
+    "ma-nganh-source" bigint,
+    "ten-nganh" text COLLATE pg_catalog."default",
+    CONSTRAINT "nganhkinhdoanh_pkey" PRIMARY KEY ("ma-nganh")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."roomlinhvuc"
+ALTER TABLE public."nganhkinhdoanh"
     OWNER to postgres;
 
-COMMENT ON TABLE public."roomlinhvuc"
+COMMENT ON TABLE public."nganhkinhdoanh"
     IS 'Bang chieu cho room linh vuc cua nha dau tu khoi ngoai';
 
--- Table: public.PhapNhanGiaoDich
+-- Table: public.phannganh
 
-DROP TABLE IF EXISTS public."phapnhangiaodich" CASCADE;
+DROP TABLE IF EXISTS public."phannganh" CASCADE;
 
-CREATE TABLE public."phapnhangiaodich"
+CREATE TABLE public."phannganh"
 (
-    "ma-to-chuc" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
-    "ten-to-chuc" text COLLATE pg_catalog."default" NOT NULL,
-    "loai-to-chuc" text COLLATE pg_catalog."default" NOT NULL,
-    "ma-linh-vuc" text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "PhapNhanGiaoDich_pkey" PRIMARY KEY ("ma-to-chuc")
+    "ma-nganh" bigint,
+    "ma-phan-nganh" bigint,
+    "ten-phan-nganh" text COLLATE pg_catalog."default",
+    CONSTRAINT "phannganh_pkey" PRIMARY KEY ("ma-nganh", "ma-phan-nganh")
 )
 
 TABLESPACE pg_default;
@@ -202,6 +204,7 @@ CREATE TABLE public."giatricophieu"
     "ma-cong-ty-phat-hanh" text COLLATE pg_catalog."default",
     "san-giao-dich" text COLLATE pg_catalog."default",
     "ngay" date,
+    "ma-ngay" bigint,
     "gia-mo-cua" double precision,
     "gia-dong-cua" double precision,
     "gia-cao-nhat" double precision,
@@ -212,9 +215,53 @@ CREATE TABLE public."giatricophieu"
     CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("id")
 )
 
---Table: public.ChiSo
---DROP TABLE IF EXISTS public."chiso" CASCADE;
+TABLESPACE pg_default;
 
+-- Table: public.ChiSo
+
+DROP TABLE IF EXISTS public."chisotheongay" CASCADE;
+
+CREATE TABLE public."chisotheongay" 
+(
+    "id" serial NOT NULL,
+    "ma-co-phieu" text COLLATE pg_catalog."default",
+    "ma-loai" bigint,
+    "ngay" date,
+    "ma-ngay" bigint,
+    "gia-tri" text COLLATE pg_catalog."default",
+    CONSTRAINT "ChiSoTheoNgay_pkey" PRIMARY KEY ("ma-co-phieu","ma-loai","ma-ngay")
+)
+
+TABLESPACE pg_default;
+
+-- Table: public.Thoigian-chiso
+
+DROP TABLE IF EXISTS public."thoigian-chiso" CASCADE;
+
+CREATE TABLE public."thoigian-chiso" 
+(
+    "ma-ngay" bigint UNIQUE NOT NULL,
+    "date" date,
+    "ngay" bigint,
+    "thang" bigint,
+    "nam" bigint,
+    "tuan" bigint,
+    CONSTRAINT "thoigian-chiso_pkey" PRIMARY KEY ("ma-ngay")
+)
+
+TABLESPACE pg_default;
+
+
+-- Table: public.Loaichiso
+
+DROP TABLE IF EXISTS public."loaichiso" CASCADE;
+
+CREATE TABLE public."loaichiso" 
+(
+    "ma-chi-so" bigint UNIQUE NOT NULL,
+    "ten-chi-so" text COLLATE pg_catalog."default",
+    CONSTRAINT "loaichiso_pkey" PRIMARY KEY ("ma-chi-so")
+)
 
 TABLESPACE pg_default;
 
