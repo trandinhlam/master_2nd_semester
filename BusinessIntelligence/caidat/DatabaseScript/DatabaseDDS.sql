@@ -229,6 +229,8 @@ CREATE TABLE public."chisotheongay"
     "ngay" date,
     "ma-ngay" bigint,
     "gia-tri" text COLLATE pg_catalog."default",
+    "ma-nganh" bigint,
+    "ma-phan-nganh" bigint,
     CONSTRAINT "ChiSoTheoNgay_pkey" PRIMARY KEY ("ma-co-phieu","ma-loai","ma-ngay")
 )
 
@@ -250,7 +252,6 @@ CREATE TABLE public."thoigian-chiso"
 )
 
 TABLESPACE pg_default;
-
 
 -- Table: public.Loaichiso
 

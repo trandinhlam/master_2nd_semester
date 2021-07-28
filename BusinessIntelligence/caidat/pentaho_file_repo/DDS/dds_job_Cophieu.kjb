@@ -7,7 +7,7 @@
   <created_user>-</created_user>
   <created_date>2021/07/22 20:12:21.696</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2021/07/27 18:07:07.698</modified_date>
+  <modified_date>2021/07/28 22:09:26.082</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -344,7 +344,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>496</xloc>
-      <yloc>192</yloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -515,8 +515,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>624</yloc>
+      <xloc>560</xloc>
+      <yloc>608</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -596,7 +596,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>656</xloc>
-      <yloc>448</yloc>
+      <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -675,8 +675,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>384</yloc>
+      <xloc>560</xloc>
+      <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -754,24 +754,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_phannganh</from>
-      <to>Transformation_CoPhieu</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Transformation_phannganh</from>
-      <to>Transformation_LoaiChiso</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Transformation_LoaiChiso</from>
       <to>Transformation_chisotheongay</to>
       <from_nr>0</from_nr>
@@ -792,6 +774,24 @@
     <hop>
       <from>Transformation_Ngay_Chiso</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation_phannganh</from>
+      <to>Transformation_CoPhieu</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Transformation_CoPhieu</from>
+      <to>Transformation_LoaiChiso</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
