@@ -217,7 +217,7 @@ CREATE TABLE public."giatricophieu"
 
 TABLESPACE pg_default;
 
--- Table: public.ChiSo
+-- Table: public.ChiSoTheoNgay
 
 DROP TABLE IF EXISTS public."chisotheongay" CASCADE;
 
@@ -232,6 +232,24 @@ CREATE TABLE public."chisotheongay"
     "ma-nganh" bigint,
     "ma-phan-nganh" bigint,
     CONSTRAINT "ChiSoTheoNgay_pkey" PRIMARY KEY ("ma-co-phieu","ma-loai","ma-ngay")
+)
+
+TABLESPACE pg_default;
+
+-- Table: public.ChiSoQuanTrongTheoNgay
+
+DROP TABLE IF EXISTS public."chisoquantrongtheongay" CASCADE;
+
+CREATE TABLE public."chisoquantrongtheongay" 
+(
+    "id" serial NOT NULL,
+    "ma-co-phieu" text COLLATE pg_catalog."default",
+    "ngay" date,
+    "ma-ngay" bigint,
+    "eps" double precision,
+    "pe" double precision,
+    "von-hoa" double precision,
+    CONSTRAINT "ChiSoQuanTrongTheoNgay_pkey" PRIMARY KEY ("ma-co-phieu","ma-ngay")
 )
 
 TABLESPACE pg_default;
