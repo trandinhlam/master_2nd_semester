@@ -228,7 +228,7 @@ CREATE TABLE public."chisotheongay"
     "ma-loai" bigint,
     "ngay" date,
     "ma-ngay" bigint,
-    "gia-tri" text COLLATE pg_catalog."default",
+    "gia-tri" double precision,
     "ma-nganh" bigint,
     "ma-phan-nganh" bigint,
     CONSTRAINT "ChiSoTheoNgay_pkey" PRIMARY KEY ("ma-co-phieu","ma-loai","ma-ngay")
