@@ -1,3 +1,17 @@
-with member [Measures].[Name] as '[CoPhieu].CurrentMember.UniqueName' select TopCount( filter({Descendants([CoPhieu] ,[CoPhieu].[TenCoPhieu])}, not isempty(([CoPhieu].CurrentMember)) ) , 50) on ROWS, 
- {[Measures].[Name]} on Columns 
- from [GiaCoPhieu]
+Câu 1:
+Dùng cú pháp slice:
+Mục đích lọc ra sự biến đổi Volume và giá của một cổ phiếu theo thời gian
+
+select NON EMPTY {[Measures].[Volume]} ON COLUMNS,
+       NON EMPTY {Descendants([Thoigian-giatricophieu.Date].[All Thoigian-giatricophieu.Dates],
+       [Thoigian-giatricophieu.Date].[Date])} ON ROWS
+from [DDS_3_BienDongGia]
+where [Cophieu.Ma-co-phieu].[MSB],
+      [Thoigian-giatricophieu.nam].[2021]
+
+select  NON EMPTY({Descendants([Thoigian-giatricophieu.Date].[All Thoigian-giatricophieu.Dates]
+        ,[Thoigian-giatricophieu.Date].[Date])}) on ROWS,
+        NON EMPTY({[Measures].[Gia-dong-cua]}) on Columns
+from [DDS_3_BienDongGia]
+where [Cophieu.Ma-co-phieu].[MSB] *
+      IFF([Thoigian-giatricophieu.nam] >= 2021,[Thoigian-giatricophieu.nam],null)

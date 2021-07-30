@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/27 00:21:00.729</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/27 15:40:31.046</modified_date>
+    <modified_date>2021/07/28 23:42:48.646</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -569,10 +569,6 @@
         <rename>ma-nganh</rename>
       </field>
       <field>
-        <name>MaNganhSource</name>
-        <rename>ma-nganh-source</rename>
-      </field>
-      <field>
         <name>TenNganh</name>
         <rename>ten-nganh</rename>
       </field>
@@ -606,7 +602,6 @@
     <connection>nganh input</connection>
     <sql>SELECT
   MaNganh
-, MaNganhSource
 , TenNganh
 FROM pentaho.nds_nganh
 </sql>
@@ -637,41 +632,18 @@ FROM pentaho.nds_nganh
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>MaNganhSource</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>MaNganhSource</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
         <name>TenNganh</name>
-        <length>9</length>
-        <precision>0</precision>
+        <length>21845</length>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>TenNganh</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -683,7 +655,7 @@ FROM pentaho.nds_nganh
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>

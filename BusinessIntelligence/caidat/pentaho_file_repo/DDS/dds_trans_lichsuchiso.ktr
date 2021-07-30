@@ -684,7 +684,7 @@ FROM pentaho.nds_chisotheongay
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -707,7 +707,7 @@ FROM pentaho.nds_chisotheongay
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -730,14 +730,14 @@ FROM pentaho.nds_chisotheongay
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>Number</type>
         <storagetype>normal</storagetype>
         <name>GiaTri</name>
-        <length>12</length>
+        <length>-1</length>
         <precision>-1</precision>
         <origin>ChiSoTheoNgay input</origin>
         <comments>GiaTri</comments>
@@ -753,7 +753,7 @@ FROM pentaho.nds_chisotheongay
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -776,7 +776,7 @@ FROM pentaho.nds_chisotheongay
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -789,8 +789,8 @@ FROM pentaho.nds_chisotheongay
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>384</yloc>
+      <xloc>240</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -833,8 +833,8 @@ FROM pentaho.nds_chisotheongay
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1232</xloc>
-      <yloc>336</yloc>
+      <xloc>1216</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -872,7 +872,7 @@ FROM pentaho.nds_cophieu
         <name>MaCP</name>
         <length>20</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>MaCP</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -886,7 +886,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -895,7 +895,7 @@ FROM pentaho.nds_cophieu
         <name>TenCongTy</name>
         <length>1000</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>TenCongTy</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -909,7 +909,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -918,7 +918,7 @@ FROM pentaho.nds_cophieu
         <name>TongCPLuuHanh</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>TongCPLuuHanh</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -932,7 +932,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -941,7 +941,7 @@ FROM pentaho.nds_cophieu
         <name>MaNganh</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>MaNganh</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -955,7 +955,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -964,7 +964,7 @@ FROM pentaho.nds_cophieu
         <name>MaSan</name>
         <length>45</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>MaSan</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -978,7 +978,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -987,7 +987,7 @@ FROM pentaho.nds_cophieu
         <name>MaPhanNganh</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>Cophieu Input</origin>
         <comments>MaPhanNganh</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1001,7 +1001,7 @@ FROM pentaho.nds_cophieu
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
         <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Asia/Bangkok</date_format_timezone>
+        <date_format_timezone>Asia/Ho_Chi_Minh</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1015,7 +1015,7 @@ FROM pentaho.nds_cophieu
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
-      <yloc>128</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

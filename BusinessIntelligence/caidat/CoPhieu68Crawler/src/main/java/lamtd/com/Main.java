@@ -17,16 +17,16 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
-//        executeDownloadFromCoPhieu68Daily();
+        executeDownloadFromCoPhieu68Daily();
 //        FetchStockInfoAll.main(args);
-        _dumpStockToDB();
+//        _dumpStockToDB();
     }
 
     private static void _dumpStockToDB() throws IOException, SQLException, ClassNotFoundException {
         String path = System.getProperty("user.dir");
         int count = 0;
-        while (++count < 64) {
-            String file = path + "/data/info/" + count + ".json";
+        while (++count < 35) {
+            String file = path + "/data/info2/" + count + ".json";
             DumpStockInfoToDataSourceDB.dump(file);
         }
     }

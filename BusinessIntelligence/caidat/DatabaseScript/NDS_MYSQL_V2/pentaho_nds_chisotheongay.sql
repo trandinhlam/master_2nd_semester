@@ -25,9 +25,9 @@ DROP TABLE IF EXISTS `nds_chisotheongay`;
 CREATE TABLE `nds_chisotheongay` (
   `MaLoai` int(11) NOT NULL,
   `MaCP` varchar(50) NOT NULL,
-  `NgayTao` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Ngay` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `GiaTri` float DEFAULT NULL,
-  `MaNgay` int(11) GENERATED ALWAYS AS ((((year(`NgayTao`) * 10000) + (month(`NgayTao`) * 100)) + dayofmonth(`NgayTao`))) STORED NOT NULL,
+  `MaNgay` int(11) GENERATED ALWAYS AS ((((year(`Ngay`) * 10000) + (month(`Ngay`) * 100)) + dayofmonth(`Ngay`))) STORED NOT NULL,
   PRIMARY KEY (`MaLoai`,`MaCP`,`MaNgay`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
