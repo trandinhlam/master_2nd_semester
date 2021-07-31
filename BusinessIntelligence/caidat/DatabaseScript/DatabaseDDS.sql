@@ -41,15 +41,10 @@ DROP TABLE IF EXISTS public."sangiaodich" CASCADE;
 
 CREATE TABLE public."sangiaodich"
 (
-    "id" serial NOT NULL,
-    "ma-san" text COLLATE pg_catalog."default" UNIQUE NOT NULL,
+    "ma-san" bigint UNIQUE NOT NULL,
     "ten-san" text COLLATE pg_catalog."default",
-    "ten-day-du" text COLLATE pg_catalog."default",
-    "tru-so" text COLLATE pg_catalog."default",
-    "dia-chi" text COLLATE pg_catalog."default",
-    CONSTRAINT "SanGiaoDich_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "SanGiaoDich_pkey" PRIMARY KEY ("ma-san")
 );
-
 
 ALTER TABLE public."sangiaodich"
     OWNER to postgres;
@@ -199,7 +194,6 @@ DROP TABLE IF EXISTS public."giatricophieu" CASCADE;
 
 CREATE TABLE public."giatricophieu"
 (
-    "id" serial NOT NULL,
     "ma-co-phieu" text COLLATE pg_catalog."default",
     "ma-cong-ty-phat-hanh" text COLLATE pg_catalog."default",
     "san-giao-dich" text COLLATE pg_catalog."default",
@@ -212,7 +206,7 @@ CREATE TABLE public."giatricophieu"
     "so-luong-co-phieu" bigint,
     "he-so-thanh-khoan" double precision,
     "volume" double precision,
-    CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("ma-co-phieu","ma-ngay")
 )
 
 TABLESPACE pg_default;
@@ -223,7 +217,6 @@ DROP TABLE IF EXISTS public."chisotheongay" CASCADE;
 
 CREATE TABLE public."chisotheongay" 
 (
-    "id" serial NOT NULL,
     "ma-co-phieu" text COLLATE pg_catalog."default",
     "ma-loai" bigint,
     "ngay" date,

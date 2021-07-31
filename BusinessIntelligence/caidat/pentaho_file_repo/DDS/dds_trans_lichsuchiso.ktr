@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/26 17:12:07.032</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/29 15:28:47.779</modified_date>
+    <modified_date>2021/07/31 00:20:41.527</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -634,6 +634,11 @@
     <hop>
       <from>Select values</from>
       <to>Chisotheongay output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Chisotheongay output</from>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1067,21 +1072,27 @@ FROM pentaho.nds_cophieu
     <fields>
       <field>
         <name>ma-loai</name>
+        <rename/>
       </field>
       <field>
         <name>ma-co-phieu</name>
+        <rename/>
       </field>
       <field>
         <name>ngay</name>
+        <rename/>
       </field>
       <field>
         <name>gia-tri</name>
+        <rename/>
       </field>
       <field>
         <name>ma-ngay</name>
+        <rename/>
       </field>
       <field>
         <name>MaCP</name>
+        <rename/>
       </field>
       <field>
         <name>MaNganh</name>
@@ -1105,8 +1116,8 @@ FROM pentaho.nds_cophieu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1040</xloc>
-      <yloc>320</yloc>
+      <xloc>1008</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1345,7 +1356,104 @@ FROM pentaho.nds_cophieu
       <draw>Y</draw>
     </GUI>
   </step>
+  <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>chiso_connection</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>chisotheongay</table>
+      <key>
+        <name>ma-loai</name>
+        <field>ma-loai</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ma-co-phieu</name>
+        <field>ma-co-phieu</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ma-ngay</name>
+        <field>ma-ngay</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>ma-loai</name>
+        <rename>ma-loai</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ma-co-phieu</name>
+        <rename>ma-co-phieu</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ngay</name>
+        <rename>ngay</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gia-tri</name>
+        <rename>gia-tri</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ma-ngay</name>
+        <rename>ma-ngay</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ma-nganh</name>
+        <rename>ma-nganh</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ma-phan-nganh</name>
+        <rename>ma-phan-nganh</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1344</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
+    <error>
+      <source_step>Chisotheongay output</source_step>
+      <target_step>Insert / update</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

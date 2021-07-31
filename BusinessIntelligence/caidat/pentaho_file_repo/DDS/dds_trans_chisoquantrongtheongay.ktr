@@ -428,8 +428,8 @@
     <created_user>-</created_user>
     <created_date>2021/07/29 23:55:52.496</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/30 00:31:26.798</modified_date>
-    <key_for_session_key/>
+    <modified_date>2021/07/30 23:27:33.837</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -564,6 +564,11 @@
     <hop>
       <from>Select values</from>
       <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table output</from>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -725,6 +730,61 @@ WHERE MaLoai = 1 OR MaLoai = 2 OR MaLoai = 10</sql>
     </GUI>
   </step>
   <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>MaLoai</name>
+      </field>
+      <field>
+        <name>MaCP</name>
+      </field>
+      <field>
+        <name>GiaTri</name>
+      </field>
+      <field>
+        <name>MaNgay</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>NgayTao</aggregate>
+        <subject>NgayTao</subject>
+        <type>FIRST_INCL_NULL</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Row denormaliser</name>
     <type>Denormaliser</type>
     <description/>
@@ -797,8 +857,57 @@ WHERE MaLoai = 1 OR MaLoai = 2 OR MaLoai = 10</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>384</yloc>
+      <xloc>560</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>MaCP</name>
+        <rename>ma-co-phieu</rename>
+      </field>
+      <field>
+        <name>MaNgay</name>
+        <rename>ma-ngay</rename>
+      </field>
+      <field>
+        <name>NgayTao</name>
+        <rename>ngay</rename>
+      </field>
+      <field>
+        <name>eps</name>
+      </field>
+      <field>
+        <name>pe</name>
+      </field>
+      <field>
+        <name>von-hoa</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -871,115 +980,8 @@ WHERE MaLoai = 1 OR MaLoai = 2 OR MaLoai = 10</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>MaCP</name>
-        <rename>ma-co-phieu</rename>
-      </field>
-      <field>
-        <name>MaNgay</name>
-        <rename>ma-ngay</rename>
-      </field>
-      <field>
-        <name>NgayTao</name>
-        <rename>ngay</rename>
-      </field>
-      <field>
-        <name>eps</name>
-        <rename/>
-      </field>
-      <field>
-        <name>pe</name>
-        <rename/>
-      </field>
-      <field>
-        <name>von-hoa</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>MaLoai</name>
-      </field>
-      <field>
-        <name>MaCP</name>
-      </field>
-      <field>
-        <name>GiaTri</name>
-      </field>
-      <field>
-        <name>MaNgay</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>NgayTao</aggregate>
-        <subject>NgayTao</subject>
-        <type>FIRST_INCL_NULL</type>
-        <valuefield/>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>352</yloc>
+      <xloc>352</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1022,12 +1024,88 @@ WHERE MaLoai = 1 OR MaLoai = 2 OR MaLoai = 10</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1216</xloc>
-      <yloc>336</yloc>
+      <xloc>752</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dds_giatricanthiet_connection</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>chisoquantrongtheongay</table>
+      <key>
+        <name>ma-co-phieu</name>
+        <field>ma-co-phieu</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ma-ngay</name>
+        <field>ma-ngay</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>ngay</name>
+        <rename>ngay</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>eps</name>
+        <rename>eps</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>pe</name>
+        <rename>pe</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>von-hoa</name>
+        <rename>von-hoa</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>Table output</source_step>
+      <target_step>Insert / update</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
