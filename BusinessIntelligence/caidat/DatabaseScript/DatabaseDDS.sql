@@ -206,10 +206,29 @@ CREATE TABLE public."giatricophieu"
     "so-luong-co-phieu" bigint,
     "he-so-thanh-khoan" double precision,
     "volume" double precision,
+    -- "ma20" double precision,
+    -- "ma50" double precision,
     CONSTRAINT "GiaTriCoPhieu_pkey" PRIMARY KEY ("ma-co-phieu","ma-ngay")
 )
 
 TABLESPACE pg_default;
+
+-- CREATE OR REPLACE FUNCTION calculate_avg() RETURNS TRIGGER AS $BODY$
+--   BEGIN
+--   NEW.ma20 := ( SELECT AVG(gia-dong-cua)
+--                         FROM public."giatricophieu"
+--                         WHERE ma-co-phieu = NEW.ma-co-phieu
+--                         AND ngay>= NEW.ngay - INTERVAL '20 HOUR');
+
+--   RETURN NEW;
+--   END;
+--   $BODY$
+--  LANGUAGE plpgsql;
+
+
+-- CREATE TRIGGER calculate_avg_trigger AFTER INSERT OR UPDATE 
+--     ON giatricophieu FOR EACH ROW 
+--     EXECUTE PROCEDURE calculate_avg();
 
 -- Table: public.ChiSoTheoNgay
 
