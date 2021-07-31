@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/25 09:46:39.983</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/30 20:29:40.618</modified_date>
+    <modified_date>2021/07/31 11:34:35.085</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -563,7 +563,7 @@
     <hop>
       <from>read_chiso</from>
       <to>Filter ROA</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>convertToFloat 2 2</from>
@@ -583,17 +583,17 @@
     <hop>
       <from>read_chiso</from>
       <to>Filter PB</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>read_chiso</from>
       <to>Filter ROE</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>read_chiso</from>
       <to>Filter Beta</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>read_chiso</from>
@@ -618,6 +618,36 @@
     <hop>
       <from>Filter VonThiTruong</from>
       <to>themMaLoai 10</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_eps</from>
+      <to>Update EPS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_pe</from>
+      <to>update PE</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_VonHoa</from>
+      <to>Update vonhoa</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_ROA</from>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_ROE</from>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>write_BETA</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -648,7 +678,7 @@
     </fields>
     <data>
       <line>
-        <item>HOSE_2</item>
+        <item>company_list2</item>
       </line>
     </data>
     <attributes/>
@@ -769,18 +799,30 @@
     <compare>
       <condition>
         <negated>N</negated>
-        <leftvalue>PE</leftvalue>
-        <function>&gt;</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>Number</type>
-          <text>0.0</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask>####0.0#########;-####0.0#########</mask>
-        </value>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>PE</leftvalue>
+            <function>&gt;</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>Number</type>
+              <text>0.0</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask>####0.0#########;-####0.0#########</mask>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>PE</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+          </condition>
+        </conditions>
       </condition>
     </compare>
     <attributes/>
@@ -990,7 +1032,7 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>tenSan.setValue(getVariable("DATA_PATH","") + "/ChiSo/" + tenSan.getString() + ".csv") ;</jsScript_script>
+        <jsScript_script>tenSan.setValue(getVariable("DATA_PATH","") + "/ChiSo/" + getVariable("COMPANY_LIST_FILE","") + ".csv") ;</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>    </fields>
@@ -1124,7 +1166,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${DATA_PATH}/ChiSo/HOSE_2.csv</filename>
+    <filename>${DATA_PATH}/ChiSo/company_list2.csv</filename>
     <filename_field>tenSan</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1146,7 +1188,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>3</length>
+        <length>9</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1157,63 +1199,8 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>4</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>GiaHienTai</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>8</length>
-        <precision>4</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>GiaSoSach</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>3</length>
-        <precision>1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>PB</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>7</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>CaoNhat52Tuan</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>6</length>
-        <precision>2</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>ThapNhat52Tuan</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
         <length>5</length>
-        <precision>2</precision>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -1245,7 +1232,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>6</length>
+        <length>7</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1267,7 +1254,7 @@
         <currency>$</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>4</length>
+        <length>5</length>
         <precision>2</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1379,72 +1366,6 @@
         <group>,</group>
         <length>15</length>
         <precision>0</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>TenCongTy</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>69</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>TenQuocTe</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>72</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>DiaChi</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>147</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>DienThoai</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>40</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Fax</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>60</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Website</name>
-        <type>String</type>
-        <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>38</length>
-        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
@@ -2199,10 +2120,188 @@
       <draw>Y</draw>
     </GUI>
   </step>
+  <step>
+    <name>Update EPS</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NDS</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>pentaho</schema>
+      <table>nds_chisotheongay</table>
+      <key>
+        <name>maLoai</name>
+        <field>MaLoai</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>MaCK</name>
+        <field>MaCP</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>GiaTri</name>
+        <rename>EPS</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1104</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>update PE</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NDS</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>pentaho</schema>
+      <table>nds_chisotheongay</table>
+      <key>
+        <name>maLoai</name>
+        <field>MaLoai</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>MaCK</name>
+        <field>MaCP</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>GiaTri</name>
+        <rename>PE</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1104</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Update vonhoa</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>NDS</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>pentaho</schema>
+      <table>nds_chisotheongay</table>
+      <key>
+        <name>maLoai</name>
+        <field>MaLoai</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>MaCK</name>
+        <field>MaCP</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>GiaTri</name>
+        <rename>VonThiTruong</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
     <error>
       <source_step>write_BETA</source_step>
-      <target_step/>
+      <target_step>Dummy (do nothing)</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
@@ -2226,7 +2325,7 @@
     </error>
     <error>
       <source_step>write_ROA</source_step>
-      <target_step/>
+      <target_step>Dummy (do nothing)</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
@@ -2238,7 +2337,19 @@
     </error>
     <error>
       <source_step>write_ROE</source_step>
-      <target_step/>
+      <target_step>Dummy (do nothing)</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_step>write_VonHoa</source_step>
+      <target_step>Update vonhoa</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
@@ -2250,7 +2361,7 @@
     </error>
     <error>
       <source_step>write_eps</source_step>
-      <target_step/>
+      <target_step>Update EPS</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
@@ -2262,7 +2373,7 @@
     </error>
     <error>
       <source_step>write_pe</source_step>
-      <target_step/>
+      <target_step>update PE</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>

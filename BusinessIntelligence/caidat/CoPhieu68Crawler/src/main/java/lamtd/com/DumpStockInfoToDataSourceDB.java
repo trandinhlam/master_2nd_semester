@@ -12,22 +12,28 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DumpStockInfoToDataSourceDB {
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public static void dump(String sourceFile) throws IOException, SQLException, ClassNotFoundException {
+    public static List<StockInfo> dump(String sourceFile) throws IOException, SQLException, ClassNotFoundException {
+        List<StockInfo> remain = new ArrayList<>();
         File file = new File(sourceFile);
         String json = _getFromFile(file);
         JsonArray stocks = new Gson().fromJson(json, JsonArray.class);
         for (int i = 0; i < stocks.size(); i++) {
             JsonObject item = stocks.get(i).getAsJsonObject();
-
             StockInfo stock = new StockInfo(item);
-            boolean b = MySqlUtils.insertData(stock);
+            if (stock.getExchange().equals("HOSE")) {
+                boolean b = MySqlUtils.insertData(stock);
+            }else{
+                remain.add(stock);
+            }
         }
+        return remain;
     }
 
     private static String _getFromFile(File file) throws IOException {
