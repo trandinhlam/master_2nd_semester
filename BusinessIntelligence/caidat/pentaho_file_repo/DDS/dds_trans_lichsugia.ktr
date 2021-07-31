@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2021/07/24 15:12:51.643</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/07/31 01:05:09.109</modified_date>
+    <modified_date>2021/07/31 17:29:08.182</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -824,6 +824,85 @@ FROM pentaho.nds_cophieu
     </GUI>
   </step>
   <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dds_lichsugia</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>giatricophieu</table>
+      <key>
+        <name>ma-co-phieu</name>
+        <field>ma-co-phieu</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>ma-ngay</name>
+        <field>ma-ngay</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>san-giao-dich</name>
+        <rename>san-giao-dich</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ngay</name>
+        <rename>ngay</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>volume</name>
+        <rename>volume</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gia-mo-cua</name>
+        <rename>gia-mo-cua</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gia-cao-nhat</name>
+        <rename>gia-cao-nhat</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gia-thap-nhat</name>
+        <rename>gia-thap-nhat</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>gia-dong-cua</name>
+        <rename>gia-dong-cua</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>LichSuGia Output</name>
     <type>TableOutput</type>
     <description/>
@@ -862,7 +941,7 @@ FROM pentaho.nds_cophieu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
+      <xloc>1040</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1496,85 +1575,6 @@ FROM pentaho.nds_lichsugia
     <GUI>
       <xloc>432</xloc>
       <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Insert / update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dds_lichsugia</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>giatricophieu</table>
-      <key>
-        <name>ma-co-phieu</name>
-        <field>ma-co-phieu</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>ma-ngay</name>
-        <field>ma-ngay</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>san-giao-dich</name>
-        <rename>san-giao-dich</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ngay</name>
-        <rename>ngay</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>volume</name>
-        <rename>volume</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>gia-mo-cua</name>
-        <rename>gia-mo-cua</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>gia-cao-nhat</name>
-        <rename>gia-cao-nhat</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>gia-thap-nhat</name>
-        <rename>gia-thap-nhat</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>gia-dong-cua</name>
-        <rename>gia-dong-cua</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1232</xloc>
-      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
