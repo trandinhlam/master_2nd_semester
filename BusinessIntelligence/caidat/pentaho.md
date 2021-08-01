@@ -50,3 +50,6 @@ ___
 16h10 24/07/2021
 + Link DashBoard nháp: http://localhost:8080/pentaho/api/repos/:home:admin:dash.wcdf/edit
 + Link DashBoard biến động giá: http://localhost:8080/pentaho/api/repos/:home:admin:StockDashBoard.wcdf/edit
++ Link DashBoard biến động volume: http://localhost:8080/pentaho/api/repos/:home:admin:BieuDoBienDongVolumeTheoNgay.wcdf/edit
++ Link dashboard ph tich co ban nganh: http://localhost:8080/pentaho/api/repos/:home:admin:BieuDoPhanTichCoBanNganh.wcdf/edit
++ http://localhost:8080/pentaho/api/repos/:home:admin:BieuDoChiSoNganh.wcdf/edit

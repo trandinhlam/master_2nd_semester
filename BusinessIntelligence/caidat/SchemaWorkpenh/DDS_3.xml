@@ -1,0 +1,26 @@
+<Schema name="DDS3">
+  <Cube name="cube" caption="a" visible="true" description="a" cache="true" enabled="true">
+    <Table name="giatricophieu" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ma-co-phieu" highCardinality="false" name="Thoigian">
+      <Hierarchy name="thoigianngay" visible="true" hasAll="true" primaryKey="date">
+        <Table name="thoigian-giatricophieu" schema="public">
+        </Table>
+        <Level name="ngay" visible="true" column="date" nameColumn="date" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ma-co-phieu" highCardinality="false" name="CoPhieu">
+      <Hierarchy name="TenCoPhieu" visible="true" hasAll="true" primaryKey="ma-co-phieu">
+        <Table name="cophieu" schema="public">
+        </Table>
+        <Level name="cophieucoban" visible="true" column="tong-co-phieu-luu-hanh" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="gia" column="gia-cao-nhat" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Volume" column="volume" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

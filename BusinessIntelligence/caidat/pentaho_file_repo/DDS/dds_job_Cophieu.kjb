@@ -7,7 +7,7 @@
   <created_user>-</created_user>
   <created_date>2021/07/22 20:12:21.696</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2021/07/30 23:50:42.458</modified_date>
+  <modified_date>2021/08/01 07:59:47.445</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -308,7 +308,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_CoPhieu</name>
+      <name>Trans_CoPhieu</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -343,12 +343,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>192</yloc>
+      <xloc>496</xloc>
+      <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_SanGD</name>
+      <name>Trans_SanGD</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -383,12 +383,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>224</yloc>
+      <xloc>656</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_LichSuGia</name>
+      <name>Trans_LichSuGia</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -423,8 +423,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
-      <yloc>272</yloc>
+      <xloc>848</xloc>
+      <yloc>256</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -435,7 +435,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1200</xloc>
+      <xloc>1232</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -480,7 +480,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_Ngay_Chiso</name>
+      <name>Trans_Ngay_Chiso</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -520,7 +520,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_nganh</name>
+      <name>Trans_nganh</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -560,7 +560,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_chisotheongay</name>
+      <name>Trans_chisotheongay</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -595,12 +595,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
-      <yloc>480</yloc>
+      <xloc>848</xloc>
+      <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_phannganh</name>
+      <name>Trans_phannganh</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -640,7 +640,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_LoaiChiso</name>
+      <name>Trans_LoaiChiso</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -675,12 +675,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>384</yloc>
+      <xloc>640</xloc>
+      <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation_chisoquantrongtheongay</name>
+      <name>Trans_chisoquantrong</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -715,15 +715,15 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>320</yloc>
+      <xloc>848</xloc>
+      <yloc>336</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>Transformation_SanGD</from>
-      <to>Transformation_LichSuGia</to>
+      <from>Trans_SanGD</from>
+      <to>Trans_LichSuGia</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -731,7 +731,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_LichSuGia</from>
+      <from>Trans_LichSuGia</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -740,8 +740,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_CoPhieu</from>
-      <to>Transformation_SanGD</to>
+      <from>Trans_CoPhieu</from>
+      <to>Trans_SanGD</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -768,7 +768,7 @@
     </hop>
     <hop>
       <from>Start</from>
-      <to>Transformation_Ngay_Chiso</to>
+      <to>Trans_Ngay_Chiso</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -777,7 +777,7 @@
     </hop>
     <hop>
       <from>Start</from>
-      <to>Transformation_nganh</to>
+      <to>Trans_nganh</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -785,8 +785,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation_nganh</from>
-      <to>Transformation_phannganh</to>
+      <from>Trans_nganh</from>
+      <to>Trans_phannganh</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -794,8 +794,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_LoaiChiso</from>
-      <to>Transformation_chisotheongay</to>
+      <from>Trans_LoaiChiso</from>
+      <to>Trans_chisotheongay</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -803,7 +803,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_chisotheongay</from>
+      <from>Trans_chisotheongay</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -812,7 +812,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_Ngay_Chiso</from>
+      <from>Trans_Ngay_Chiso</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -821,8 +821,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_phannganh</from>
-      <to>Transformation_CoPhieu</to>
+      <from>Trans_phannganh</from>
+      <to>Trans_CoPhieu</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -830,8 +830,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_CoPhieu</from>
-      <to>Transformation_LoaiChiso</to>
+      <from>Trans_CoPhieu</from>
+      <to>Trans_LoaiChiso</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -839,8 +839,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_LoaiChiso</from>
-      <to>Transformation_chisoquantrongtheongay</to>
+      <from>Trans_LoaiChiso</from>
+      <to>Trans_chisoquantrong</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -848,7 +848,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Transformation_chisoquantrongtheongay</from>
+      <from>Trans_chisoquantrong</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
